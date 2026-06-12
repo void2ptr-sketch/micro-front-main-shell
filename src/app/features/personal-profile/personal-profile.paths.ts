@@ -1,6 +1,6 @@
 /** Path segments exposed by Personal Profile remote. */
 export const PersonalProfileRoutePath = {
-  home: 'home',
+  userInfo: 'user-info',
   security: 'security',
   locale: 'locale',
   theme: 'theme',

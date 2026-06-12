@@ -19,5 +19,5 @@ export class HomeComponent {
   readonly appName = environment.appName;
   readonly remoteEntries = Object.keys(environment.remoteEntries);
   readonly cloudberryDashboardPath = cloudberryPath(CloudberryRoutePath.dashboard);
-  readonly personalProfileHomePath = personalProfilePath(PersonalProfileRoutePath.home);
+  readonly personalProfileUserInfoPath = personalProfilePath(PersonalProfileRoutePath.userInfo);
 }

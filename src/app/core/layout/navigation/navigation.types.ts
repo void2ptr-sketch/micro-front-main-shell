@@ -33,7 +33,7 @@ export const CLOUDBERRY_NAV_ITEMS: NavItem[] = [
 ];
 
 export const PERSONAL_PROFILE_NAV_ITEMS: NavItem[] = [
-  { label: 'Профиль', path: personalProfilePath(PersonalProfileRoutePath.home), icon: 'account_circle' },
+  { label: 'Home', path: personalProfilePath(PersonalProfileRoutePath.userInfo), icon: 'account_circle' },
   {
     label: 'Безопасность',
     path: personalProfilePath(PersonalProfileRoutePath.security),

@@ -1,8 +1,12 @@
 <div class="layout">
   <app-header class="layout__header" />
   <app-navigation class="layout__nav" />
-  <main class="layout__content">
-    <router-outlet />
+  <main #content class="layout__content" [attr.data-shell-segment]="activeContentSegment()">
+    @if (outletReady()) {
+      <div class="layout__outlet">
+        <router-outlet (activate)="onOutletActivate()" />
+      </div>
+    }
   </main>
   <app-footer class="layout__footer" />
 </div>
