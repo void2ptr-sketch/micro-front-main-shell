@@ -1,3 +1,11 @@
+.navigation__group {
+  margin-top: 0.5rem;
+}
+
+.navigation__group:first-child {
+  margin-top: 0;
+}
+
 .navigation {
   height: 100%;
   border-right: 1px solid color-mix(in srgb, currentColor 12%, transparent);

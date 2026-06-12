@@ -13,7 +13,7 @@
         <li>
           <code>{{ remote }}</code>
           @if (remote === 'cloudberry') {
-            — <a routerLink="/cloudberry/dashboard">FinOps / Cloudberry</a>
+            — <a [routerLink]="cloudberryDashboardPath">FinOps / Cloudberry</a>
           }
         </li>
       }

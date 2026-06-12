@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 
 import { environment } from '../../../environments/environment';
+import { cloudberryPath, CloudberryRoutePath } from '../cloudberry/cloudberry.paths';
 
 @Component({
   selector: 'app-home',
@@ -13,4 +14,5 @@ import { environment } from '../../../environments/environment';
 export class HomeComponent {
   readonly appName = environment.appName;
   readonly remoteEntries = Object.keys(environment.remoteEntries);
+  readonly cloudberryDashboardPath = cloudberryPath(CloudberryRoutePath.dashboard);
 }

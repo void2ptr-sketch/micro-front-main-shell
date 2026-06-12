@@ -1,11 +1,25 @@
 <nav class="navigation">
   <mat-nav-list>
-    @for (item of navItems; track item.path) {
+    <div matSubheader class="navigation__group">Shell</div>
+    @for (item of shellNavItems; track item.path) {
       <a
         mat-list-item
         [routerLink]="item.path"
         routerLinkActive="navigation__link--active"
         [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+      >
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span matListItemTitle>{{ item.label }}</span>
+      </a>
+    }
+
+    <div matSubheader class="navigation__group">Cloudberry</div>
+    @for (item of cloudberryNavItems; track item.path) {
+      <a
+        mat-list-item
+        [routerLink]="item.path"
+        routerLinkActive="navigation__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
         <span matListItemTitle>{{ item.label }}</span>
