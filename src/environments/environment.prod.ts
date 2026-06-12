@@ -4,6 +4,7 @@ export const environment = {
   appName: 'Micro Front Main Shell',
   remoteEntries: {
     cloudberry: '/cloudberry/remoteEntry.json',
+    'personal-profile': '/profile/remoteEntry.json',
   },
 } as const;
 
