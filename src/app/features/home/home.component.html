@@ -15,6 +15,9 @@
           @if (remote === 'cloudberry') {
             — <a [routerLink]="cloudberryDashboardPath">FinOps / Cloudberry</a>
           }
+          @if (remote === 'personal-profile') {
+            — <a [routerLink]="personalProfileHomePath">Personal Profile</a>
+          }
         </li>
       }
     </ul>

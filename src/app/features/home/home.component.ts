@@ -4,6 +4,10 @@ import { MatCardModule } from '@angular/material/card';
 
 import { environment } from '../../../environments/environment';
 import { cloudberryPath, CloudberryRoutePath } from '../cloudberry/cloudberry.paths';
+import {
+  personalProfilePath,
+  PersonalProfileRoutePath,
+} from '../personal-profile/personal-profile.paths';
 
 @Component({
   selector: 'app-home',
@@ -15,4 +19,5 @@ export class HomeComponent {
   readonly appName = environment.appName;
   readonly remoteEntries = Object.keys(environment.remoteEntries);
   readonly cloudberryDashboardPath = cloudberryPath(CloudberryRoutePath.dashboard);
+  readonly personalProfileHomePath = personalProfilePath(PersonalProfileRoutePath.home);
 }
