@@ -1,0 +1,39 @@
+.layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header'
+    'nav content'
+    'footer footer';
+}
+
+.layout__header {
+  grid-area: header;
+}
+
+.layout__nav {
+  grid-area: nav;
+}
+
+.layout__content {
+  grid-area: content;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.layout__footer {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'nav'
+      'content'
+      'footer';
+  }
+}

@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  font-weight: 500;
+}
+
+.header__status {
+  font-size: 0.875rem;
+  opacity: 0.85;
+}

@@ -1,0 +1,22 @@
+<mat-card class="home">
+  <mat-card-header>
+    <mat-card-title>{{ appName }}</mat-card-title>
+    <mat-card-subtitle>Главная точка входа пользователя</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Host-приложение микрофронтенд-архитектуры на Angular с Module Federation (Native Federation).
+    </p>
+    <p>Зарегистрированные remote-приложения:</p>
+    <ul>
+      @for (remote of remoteEntries; track remote) {
+        <li>
+          <code>{{ remote }}</code>
+          @if (remote === 'cloudberry') {
+            — <a routerLink="/cloudberry/dashboard">FinOps / Cloudberry</a>
+          }
+        </li>
+      }
+    </ul>
+  </mat-card-content>
+</mat-card>

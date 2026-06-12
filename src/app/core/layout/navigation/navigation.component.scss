@@ -1,0 +1,13 @@
+.navigation {
+  height: 100%;
+  border-right: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.navigation__link--active {
+  background: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
