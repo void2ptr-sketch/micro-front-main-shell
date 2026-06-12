@@ -8,8 +8,7 @@ export const CloudberryRoutePath = {
   profile: 'profile',
 } as const;
 
-export type CloudberryRoutePath =
-  (typeof CloudberryRoutePath)[keyof typeof CloudberryRoutePath];
+export type CloudberryRoutePath = (typeof CloudberryRoutePath)[keyof typeof CloudberryRoutePath];
 
 export const CLOUDBERRY_BASE_PATH = '/cloudberry';
 

@@ -12,10 +12,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(
-      routes,
-      withRouterConfig({ onSameUrlNavigation: 'reload' }),
-    ),
+    provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' })),
     { provide: RouteReuseStrategy, useClass: ShellRouteReuseStrategy },
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([loadingInterceptor, authInterceptor, errorInterceptor])),

@@ -31,7 +31,9 @@ export const resolveShellContentSegment = (url: string): ShellContentSegment => 
   return 'home';
 };
 
-export const resolvePersonalProfileFeature = (url: string): PersonalProfileFeatureSegment | null => {
+export const resolvePersonalProfileFeature = (
+  url: string,
+): PersonalProfileFeatureSegment | null => {
   const path = url.split('?')[0]?.split('#')[0] ?? '';
 
   if (!path.startsWith(PERSONAL_PROFILE_ROUTE_PREFIX)) {

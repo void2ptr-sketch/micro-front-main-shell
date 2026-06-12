@@ -95,8 +95,7 @@ export class MainLayoutComponent implements OnDestroy {
     cleanupAllRemoteShellArtifacts();
 
     const leavingRemoteForHome =
-      nextSegment === 'home' &&
-      (previousSegment === 'profile' || previousSegment === 'cloudberry');
+      nextSegment === 'home' && (previousSegment === 'profile' || previousSegment === 'cloudberry');
 
     if (leavingRemoteForHome) {
       this.refreshOutlet();

@@ -15,9 +15,7 @@ export type NavItem = {
   icon: string;
 };
 
-export const SHELL_NAV_ITEMS: NavItem[] = [
-  { label: 'Главная', path: '/', icon: 'home' },
-];
+export const SHELL_NAV_ITEMS: NavItem[] = [{ label: 'Главная', path: '/', icon: 'home' }];
 
 export const CLOUDBERRY_NAV_ITEMS: NavItem[] = [
   { label: 'Обзор', path: cloudberryPath(CloudberryRoutePath.dashboard), icon: 'dashboard' },
@@ -33,14 +31,22 @@ export const CLOUDBERRY_NAV_ITEMS: NavItem[] = [
 ];
 
 export const PERSONAL_PROFILE_NAV_ITEMS: NavItem[] = [
-  { label: 'Home', path: personalProfilePath(PersonalProfileRoutePath.userInfo), icon: 'account_circle' },
+  {
+    label: 'Home',
+    path: personalProfilePath(PersonalProfileRoutePath.userInfo),
+    icon: 'account_circle',
+  },
   {
     label: 'Безопасность',
     path: personalProfilePath(PersonalProfileRoutePath.security),
     icon: 'lock',
   },
   { label: 'Язык', path: personalProfilePath(PersonalProfileRoutePath.locale), icon: 'translate' },
-  { label: 'Оформление', path: personalProfilePath(PersonalProfileRoutePath.theme), icon: 'palette' },
+  {
+    label: 'Оформление',
+    path: personalProfilePath(PersonalProfileRoutePath.theme),
+    icon: 'palette',
+  },
 ];
 
 /** @deprecated Use grouped nav item constants */
