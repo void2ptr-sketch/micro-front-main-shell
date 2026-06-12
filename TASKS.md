@@ -56,7 +56,7 @@
 ## Module
 - [x] Подключение `Micro Front` при помощи `Module Federation`
 - [x] Подключи (host) проект `cloudberry`       он расположен тут:  /home/alex/workspace/micro-front-cloudberry
-- [ ] Подключи (host) проект `Personal Profile` он расположен тут: /home/alex/workspace/micro-front-personal-profile
+- [x] Подключи (host) проект `Personal Profile` он расположен тут: /home/alex/workspace/micro-front-personal-profile
 
 ## Environments
 
