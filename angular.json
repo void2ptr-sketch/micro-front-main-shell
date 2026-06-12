@@ -68,7 +68,7 @@
             "outputPath": "dist/micro-front-main-shell",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js", "es-module-shims"],
+            "polyfills": ["@angular/localize/init", "zone.js", "es-module-shims"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
