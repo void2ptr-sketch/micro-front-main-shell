@@ -18,11 +18,6 @@ export const routes: Routes = [
         path: 'cloudberry',
         loadChildren: loadCloudberryRoutes,
       },
-      {
-        path: 'security',
-        loadChildren: () =>
-          import('./features/security/security.routes').then((m) => m.SECURITY_ROUTES),
-      },
     ],
   },
   {
