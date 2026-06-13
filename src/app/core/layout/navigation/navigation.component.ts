@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { filter } from 'rxjs';
 
 import {
-  CLOUDBERRY_NAV_ITEMS,
-  PERSONAL_PROFILE_NAV_ITEMS,
-  SHELL_NAV_ITEMS,
-} from './navigation.types';
+  resolveShellContentSegment,
+  type ShellContentSegment,
+} from '../shell-remote-cleanup';
+import { CLOUDBERRY_NAV_ITEMS, PERSONAL_PROFILE_NAV_ITEMS } from './navigation.types';
 
 @Component({
   selector: 'app-navigation',
@@ -16,7 +17,20 @@ import {
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent {
-  readonly shellNavItems = SHELL_NAV_ITEMS;
+  private readonly router = inject(Router);
+
+  readonly activeSegment = signal<ShellContentSegment>(
+    resolveShellContentSegment(this.router.url),
+  );
+
   readonly cloudberryNavItems = CLOUDBERRY_NAV_ITEMS;
   readonly personalProfileNavItems = PERSONAL_PROFILE_NAV_ITEMS;
+
+  constructor() {
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.activeSegment.set(resolveShellContentSegment(event.urlAfterRedirects));
+      });
+  }
 }

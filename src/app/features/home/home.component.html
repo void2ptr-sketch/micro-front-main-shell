@@ -7,18 +7,15 @@
     <p>
       Host-приложение микрофронтенд-архитектуры на Angular с Module Federation (Native Federation).
     </p>
+    <p>
+      Выберите нужное приложение в <strong>Главном меню</strong> в шапке — remote-модуль загрузится
+      после выбора, а его разделы появятся в левой навигации. Вернуться на главную можно через
+      меню <strong>Help</strong>.
+    </p>
     <p>Зарегистрированные remote-приложения:</p>
     <ul>
       @for (remote of remoteEntries; track remote) {
-        <li>
-          <code>{{ remote }}</code>
-          @if (remote === 'cloudberry') {
-            — <a [routerLink]="cloudberryDashboardPath">FinOps / Cloudberry</a>
-          }
-          @if (remote === 'personal-profile') {
-            — <a [routerLink]="personalProfileUserInfoPath">Personal Profile</a>
-          }
-        </li>
+        <li><code>{{ remote }}</code></li>
       }
     </ul>
   </mat-card-content>

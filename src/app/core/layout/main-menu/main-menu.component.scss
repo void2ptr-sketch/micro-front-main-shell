@@ -1,0 +1,29 @@
+.main-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.main-menu__item-label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.main-menu__item-title {
+  font-size: 0.9375rem;
+}
+
+.main-menu__item-subtitle {
+  font-size: 0.75rem;
+  opacity: 0.72;
+}
+
+.main-menu__item--active {
+  background: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

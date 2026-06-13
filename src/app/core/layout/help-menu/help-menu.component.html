@@ -1,0 +1,24 @@
+<button
+  mat-button
+  type="button"
+  class="help-menu__trigger"
+  [matMenuTriggerFor]="helpMenu"
+  aria-label="Help"
+>
+  <mat-icon>help_outline</mat-icon>
+  <span>Help</span>
+</button>
+
+<mat-menu #helpMenu="matMenu" class="help-menu__panel">
+  @for (item of menuItems; track item.path) {
+    <a
+      mat-menu-item
+      [routerLink]="item.path"
+      routerLinkActive="help-menu__item--active"
+      [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.label }}</span>
+    </a>
+  }
+</mat-menu>

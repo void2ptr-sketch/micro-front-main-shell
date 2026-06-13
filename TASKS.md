@@ -60,6 +60,10 @@
 - [x] Подключение `Micro Front` при помощи `Module Federation`
 - [x] Подключи (host) проект `cloudberry` он расположен тут: /home/alex/workspace/micro-front-cloudberry
 - [x] Подключи (host) проект `Personal Profile` он расположен тут: /home/alex/workspace/micro-front-personal-profile
+- [x] XOST микрофронты доступны в "Главном меню", НЕ загружаются сразу - в левое навигационное меню, загрузка нужного прложения в происходит после выбора в "Главном меню"
+- [ ] Создать правее "Главного меню" меню "Help". Из левого навигационного меню пункт "Главная" переместить в меню "Help
+
+
 
 ## Environments
 

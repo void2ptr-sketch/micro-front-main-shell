@@ -1,0 +1,26 @@
+<button
+  mat-button
+  type="button"
+  class="main-menu__trigger"
+  [matMenuTriggerFor]="mainMenu"
+  aria-label="Главное меню"
+>
+  <mat-icon>apps</mat-icon>
+  <span>Главное меню</span>
+</button>
+
+<mat-menu #mainMenu="matMenu" class="main-menu__panel">
+  @for (item of menuItems; track item.id) {
+    <a
+      mat-menu-item
+      [routerLink]="item.path"
+      routerLinkActive="main-menu__item--active"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span class="main-menu__item-label">
+        <span class="main-menu__item-title">{{ item.label }}</span>
+        <span class="main-menu__item-subtitle">{{ item.subtitle }}</span>
+      </span>
+    </a>
+  }
+</mat-menu>

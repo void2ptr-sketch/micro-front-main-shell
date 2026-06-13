@@ -1,0 +1,14 @@
+.help-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.help-menu__item--active {
+  background: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
