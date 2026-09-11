@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,6 +10,7 @@ import { resolveMainMenuItems } from './main-menu.types';
   selector: 'app-main-menu',
   imports: [MatButtonModule, MatIconModule, MatMenuModule, RouterLink, RouterLinkActive],
   templateUrl: './main-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './main-menu.component.scss',
 })
 export class MainMenuComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
       </mat-card-content>
     </mat-card>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: `
     .cloudberry-error pre {
       padding: 0.75rem;

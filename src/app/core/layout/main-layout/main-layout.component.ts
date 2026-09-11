@@ -1,4 +1,12 @@
-import { Component, ElementRef, inject, OnDestroy, signal, viewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  signal,
+  viewChild,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { effect } from '@angular/core';
@@ -21,6 +29,7 @@ import { NavigationComponent } from '../navigation/navigation.component';
   selector: 'app-main-layout',
   imports: [RouterOutlet, MatSnackBarModule, HeaderComponent, NavigationComponent, FooterComponent],
   templateUrl: './main-layout.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './main-layout.component.scss',
 })
 export class MainLayoutComponent implements OnDestroy {

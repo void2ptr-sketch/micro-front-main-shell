@@ -15,6 +15,10 @@ module.exports = defineConfig([
     ],
     processor: angular.processInlineTemplates,
     rules: {
+      // Angular 22's ng-update migration sets `ChangeDetectionStrategy.Eager` on
+      // components to preserve the pre-v22 default change-detection behavior.
+      // Opting into OnPush is a separate refactor and is intentionally not enforced here.
+      '@angular-eslint/prefer-on-push-component-change-detection': 'off',
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       '@angular-eslint/directive-selector': [
         'error',

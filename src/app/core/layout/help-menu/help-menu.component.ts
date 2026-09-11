@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,6 +10,7 @@ import { HELP_MENU_ITEMS } from './help-menu.types';
   selector: 'app-help-menu',
   imports: [MatButtonModule, MatIconModule, MatMenuModule, RouterLink, RouterLinkActive],
   templateUrl: './help-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './help-menu.component.scss',
 })
 export class HelpMenuComponent {

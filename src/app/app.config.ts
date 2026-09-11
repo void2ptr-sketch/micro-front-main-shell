@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withInterceptors, withXhr } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, RouteReuseStrategy, withRouterConfig } from '@angular/router';
 
@@ -15,6 +15,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' })),
     { provide: RouteReuseStrategy, useClass: ShellRouteReuseStrategy },
     provideAnimations(),
-    provideHttpClient(withInterceptors([loadingInterceptor, authInterceptor, errorInterceptor])),
+    provideHttpClient(
+      withXhr(),
+      withInterceptors([loadingInterceptor, authInterceptor, errorInterceptor]),
+    ),
   ],
 };

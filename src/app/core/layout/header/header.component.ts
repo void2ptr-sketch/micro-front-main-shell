@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { environment } from '../../../../environments/environment';
@@ -10,6 +10,7 @@ import { MainMenuComponent } from '../main-menu/main-menu.component';
   selector: 'app-header',
   imports: [MatToolbarModule, MainMenuComponent, HelpMenuComponent],
   templateUrl: './header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
