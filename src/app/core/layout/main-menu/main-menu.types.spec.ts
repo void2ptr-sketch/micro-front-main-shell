@@ -5,7 +5,7 @@ describe('resolveMainMenuItems', () => {
     const items = resolveMainMenuItems();
 
     expect(items.length).toBeGreaterThan(0);
-    expect(items.some((item) => item.id === 'cloudberry')).toBeTrue();
-    expect(items.some((item) => item.id === 'personal-profile')).toBeTrue();
+    expect(items.some((item) => item.id === 'cloudberry')).toBe(true);
+    expect(items.some((item) => item.id === 'personal-profile')).toBe(true);
   });
 });
