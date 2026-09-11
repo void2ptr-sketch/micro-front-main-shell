@@ -1,0 +1,5 @@
+- Angular 17 . Angular.material.
+- Версии библиотек не менять
+- по окончанни задачи (prompt) проверять сборку
+- вести изменения в TASKS.md
+- писать /docs/CHANGELOG.md

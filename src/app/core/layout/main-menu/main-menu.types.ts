@@ -13,7 +13,7 @@ export type MainMenuRemoteId = 'cloudberry' | 'personal-profile';
 export type MainMenuItem = {
   id: MainMenuRemoteId;
   label: string;
-  subtitle: string;
+  title: string;
   path: string;
   icon: string;
 };
@@ -21,13 +21,13 @@ export type MainMenuItem = {
 const MAIN_MENU_CATALOG: Record<MainMenuRemoteId, Omit<MainMenuItem, 'id'>> = {
   cloudberry: {
     label: 'Cloudberry',
-    subtitle: 'FinOps / облачные расходы',
+    title: 'FinOps / облачные расходы',
     path: cloudberryPath(CloudberryRoutePath.dashboard),
     icon: 'cloud',
   },
   'personal-profile': {
     label: 'Personal Profile',
-    subtitle: 'Профиль и настройки пользователя',
+    title: 'Профиль и настройки пользователя',
     path: personalProfilePath(PersonalProfileRoutePath.userInfo),
     icon: 'account_circle',
   },

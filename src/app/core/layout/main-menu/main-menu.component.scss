@@ -4,17 +4,17 @@
   gap: 0.35rem;
 }
 
-.main-menu__item-label {
+.main-menu__item {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
-.main-menu__item-title {
+.main-menu__item-label {
   font-size: 0.9375rem;
 }
 
-.main-menu__item-subtitle {
+.main-menu__item-title {
   font-size: 0.75rem;
   opacity: 0.72;
 }
