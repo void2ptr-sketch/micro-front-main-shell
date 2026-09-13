@@ -16,9 +16,6 @@
         "format:fix": "prettier --write \"src/**/*.{ts,html,scss,json}\" \"*.{json,js,md}\""
     },
     "private": true,
-    "engines": {
-        "node": ">=24.16.0"
-    },
     "dependencies": {
         "@angular-architects/native-federation": "^22.1.2",
         "@angular/animations": "^22.1.6",
