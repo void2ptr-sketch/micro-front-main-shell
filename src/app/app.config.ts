@@ -10,14 +10,14 @@ import { ShellRouteReuseStrategy } from './core/routing/shell-route-reuse.strate
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' })),
-    { provide: RouteReuseStrategy, useClass: ShellRouteReuseStrategy },
-    provideAnimations(),
-    provideHttpClient(
-      withXhr(),
-      withInterceptors([loadingInterceptor, authInterceptor, errorInterceptor]),
-    ),
-  ],
+    providers: [
+        provideZoneChangeDetection({ eventCoalescing: true }),
+        provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' })),
+        { provide: RouteReuseStrategy, useClass: ShellRouteReuseStrategy },
+        provideAnimations(),
+        provideHttpClient(
+            withXhr(),
+            withInterceptors([loadingInterceptor, authInterceptor, errorInterceptor]),
+        ),
+    ],
 };

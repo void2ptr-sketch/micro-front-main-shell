@@ -8,25 +8,27 @@ import { resolveShellContentSegment, type ShellContentSegment } from '../shell-r
 import { CLOUDBERRY_NAV_ITEMS, PERSONAL_PROFILE_NAV_ITEMS } from './navigation.types';
 
 @Component({
-  selector: 'app-navigation',
-  imports: [RouterLink, RouterLinkActive, MatIconModule, MatListModule],
-  templateUrl: './navigation.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './navigation.component.scss',
+    selector: 'app-navigation',
+    imports: [RouterLink, RouterLinkActive, MatIconModule, MatListModule],
+    templateUrl: './navigation.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent {
-  private readonly router = inject(Router);
+    private readonly router = inject(Router);
 
-  readonly activeSegment = signal<ShellContentSegment>(resolveShellContentSegment(this.router.url));
+    readonly activeSegment = signal<ShellContentSegment>(
+        resolveShellContentSegment(this.router.url),
+    );
 
-  readonly cloudberryNavItems = CLOUDBERRY_NAV_ITEMS;
-  readonly personalProfileNavItems = PERSONAL_PROFILE_NAV_ITEMS;
+    readonly cloudberryNavItems = CLOUDBERRY_NAV_ITEMS;
+    readonly personalProfileNavItems = PERSONAL_PROFILE_NAV_ITEMS;
 
-  constructor() {
-    this.router.events
-      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe((event) => {
-        this.activeSegment.set(resolveShellContentSegment(event.urlAfterRedirects));
-      });
-  }
+    constructor() {
+        this.router.events
+            .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+            .subscribe((event) => {
+                this.activeSegment.set(resolveShellContentSegment(event.urlAfterRedirects));
+            });
+    }
 }

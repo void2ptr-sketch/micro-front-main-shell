@@ -1,40 +1,21 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
-
+import { RouteReuseStrategy, ActivatedRouteSnapshot, DetachedRouteHandle } from '@angular/router';
 @Injectable()
 export class ShellRouteReuseStrategy implements RouteReuseStrategy {
-  shouldDetach(): boolean {
-    return false;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- RouteReuseStrategy interface
-  store(_route: ActivatedRouteSnapshot, _handle: DetachedRouteHandle | null): void {
-    // Shell never caches detached routes.
-  }
-
-  shouldAttach(): boolean {
-    return false;
-  }
-
-  retrieve(): DetachedRouteHandle | null {
-    return null;
-  }
-
-  shouldReuseRoute(future: ActivatedRouteSnapshot, current: ActivatedRouteSnapshot): boolean {
-    if (future.routeConfig !== current.routeConfig) {
-      return false;
+    shouldDetach(): boolean {
+    private storedRoutes = new Map<string, DetachedRouteHandle>();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- RouteReuseStrategy interface
+    store(_route: ActivatedRouteSnapshot, _handle: DetachedRouteHandle | null): void {
+        // Shell never caches detached routes.
+    store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
+        // Нет необходимости хранить маршруты
     }
-
-    const futureChildPath = future.firstChild?.routeConfig?.path ?? '';
-    const currentChildPath = current.firstChild?.routeConfig?.path ?? '';
-
-    if (futureChildPath !== currentChildPath) {
-      return false;
+    shouldAttach(route: ActivatedRouteSnapshot): boolean {
+    store(_route: ActivatedRouteSnapshot, _handle: DetachedRouteHandle | null): void {
     }
+    shouldAttach(): boolean {
+        const futureGrandchildPath = future.firstChild?.firstChild?.routeConfig?.path ?? '';
+        const currentGrandchildPath = current.firstChild?.firstChild?.routeConfig?.path ?? '';
 
-    const futureGrandchildPath = future.firstChild?.firstChild?.routeConfig?.path ?? '';
-    const currentGrandchildPath = current.firstChild?.firstChild?.routeConfig?.path ?? '';
-
-    return futureGrandchildPath === currentGrandchildPath;
-  }
-}
+        return futureGrandchildPath === currentGrandchildPath;

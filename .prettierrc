@@ -2,7 +2,41 @@
   "singleQuote": true,
   "trailingComma": "all",
   "printWidth": 100,
-  "tabWidth": 2,
+  "tabWidth": 4,
   "semi": true,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      files: '*.ts',
+      options: {
+        tabWidth: 4,
+      },
+    },
+    {
+      files: '*.js',
+      options: {
+        tabWidth: 4,
+      },
+    },
+    {
+      files: '*.json',
+      options: {
+        tabWidth: 4,
+      },
+    },
+    {
+      files: '*.html',
+      options: {
+        tabWidth: 4,
+        parser: 'angular',
+      },
+    },
+    {
+      files: '*.scss',
+      options: {
+        tabWidth: 4,
+        singleQuote: false,
+      },
+    },
+  ],
 }

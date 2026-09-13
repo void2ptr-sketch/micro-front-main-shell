@@ -1,14 +1,14 @@
 export type ApiErrorBody = {
-  message: string;
-  code?: string;
+    message: string;
+    code?: string;
 };
 
 export type ApiResponse<T> = {
-  data: T;
-  success: boolean;
+    data: T;
+    success: boolean;
 };
 
 export type RequestState = {
-  loading: boolean;
-  error: string | null;
+    loading: boolean;
+    error: string | null;
 };

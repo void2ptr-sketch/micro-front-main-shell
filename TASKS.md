@@ -12,10 +12,10 @@
 - [x] Описать домен приложения: Основное приложение в микросервисной архитектуре - главная точка входа пользователя
 - [x] Настроить маршрутизацию (`app.routes.ts`)
 - [x] Добавить layout (шапка, подвал, навигация, контент)
-  - подвал - /src/app/core/layout/footer
-  - шапка - /src/app/core/layout/header
-  - контент - /src/app/core/layout/main-layout
-  - навигация - /src/app/core/layout/navigation
+    - подвал - /src/app/core/layout/footer
+    - шапка - /src/app/core/layout/header
+    - контент - /src/app/core/layout/main-layout
+    - навигация - /src/app/core/layout/navigation
 - [x] Вынести конфигурацию окружения (`environment.ts`)
 
 ## 3. Управление состоянием
@@ -62,8 +62,6 @@
 - [x] Подключи (host) проект `Personal Profile` он расположен тут: /home/alex/workspace/micro-front-personal-profile
 - [x] XOST микрофронты доступны в "Главном меню", НЕ загружаются сразу - в левое навигационное меню, загрузка нужного прложения в происходит после выбора в "Главном меню"
 - [ ] Создать правее "Главного меню" меню "Help". Из левого навигационного меню пункт "Главная" переместить в меню "Help
-
-
 
 ## Environments
 

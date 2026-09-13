@@ -7,12 +7,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HELP_MENU_ITEMS } from './help-menu.types';
 
 @Component({
-  selector: 'app-help-menu',
-  imports: [MatButtonModule, MatIconModule, MatMenuModule, RouterLink, RouterLinkActive],
-  templateUrl: './help-menu.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './help-menu.component.scss',
+    selector: 'app-help-menu',
+    imports: [MatButtonModule, MatIconModule, MatMenuModule, RouterLink, RouterLinkActive],
+    templateUrl: './help-menu.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './help-menu.component.scss',
 })
 export class HelpMenuComponent {
-  readonly menuItems = HELP_MENU_ITEMS;
+    readonly menuItems = HELP_MENU_ITEMS;
 }

@@ -22,15 +22,18 @@ npm start
 
 ## Скрипты
 
-| Команда                | Описание                  |
-| ---------------------- | ------------------------- |
-| `npm start`            | Dev-сервер                |
-| `npm run build`        | Production-сборка         |
-| `npm test`             | Unit-тесты (Karma)        |
-| `npm run lint`         | ESLint                    |
-| `npm run lint:fix`     | ESLint с автоисправлением |
-| `npm run format`       | Prettier                  |
-| `npm run format:check` | Проверка форматирования   |
+| Команда                 | Описание                  |
+| ----------------------- | ------------------------- |
+| `npm start`             | Dev-сервер                |
+| `npm run build`         | Production-сборка         |
+| `npm test`              | Unit-тесты (Jest)         |
+| `npm run test:watch`    | Unit-тесты в watch-режиме |
+| `npm run test:coverage` | Unit-тесты с покрытием    |
+| `npm run test:ci`       | Unit-тесты для CI         |
+| `npm run lint`          | ESLint                    |
+| `npm run lint:fix`      | ESLint с автоисправлением |
+| `npm run format`        | Prettier                  |
+| `npm run format:check`  | Проверка форматирования   |
 
 ## Структура
 

@@ -5,8 +5,8 @@ import { finalize } from 'rxjs';
 import { AppStateService } from '../services/app-state.service';
 
 export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
-  const appState = inject(AppStateService);
-  appState.startLoading();
+    const appState = inject(AppStateService);
+    appState.startLoading();
 
-  return next(req).pipe(finalize(() => appState.stopLoading()));
+    return next(req).pipe(finalize(() => appState.stopLoading()));
 };
