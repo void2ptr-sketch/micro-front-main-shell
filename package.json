@@ -17,7 +17,6 @@
     },
     "private": true,
     "dependencies": {
-        "@angular-architects/module-federation": "^22.0.0",
         "@angular-architects/native-federation": "^22.1.2",
         "@angular/animations": "^22.1.6",
         "@angular/cdk": "^22.1.6",
@@ -58,5 +57,14 @@
         "@parcel/watcher@2.6.0": true,
         "lmdb@3.5.6": true,
         "msgpackr-extract@3.0.4": true
+    },
+    "overrides": {
+        "sockjs": {
+            "uuid": "^11.1.1"
+        },
+        "axios": "^1.18.0",
+        "qs": "^6.16.0",
+        "smol-toml": "^1.7.2"
     }
+
 }
