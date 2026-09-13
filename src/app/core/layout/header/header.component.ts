@@ -7,13 +7,13 @@ import { HelpMenuComponent } from '../help-menu/help-menu.component';
 import { MainMenuComponent } from '../main-menu/main-menu.component';
 
 @Component({
-  selector: 'app-header',
-  imports: [MatToolbarModule, MainMenuComponent, HelpMenuComponent],
-  templateUrl: './header.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './header.component.scss',
+    selector: 'app-header',
+    imports: [MatToolbarModule, MainMenuComponent, HelpMenuComponent],
+    templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  readonly appName = environment.appName;
-  readonly appState = inject(AppStateService);
+    readonly appName = environment.appName;
+    readonly appState = inject(AppStateService);
 }

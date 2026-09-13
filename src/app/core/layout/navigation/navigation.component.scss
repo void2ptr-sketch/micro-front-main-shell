@@ -1,21 +1,21 @@
 .navigation__group {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .navigation__group:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .navigation {
-  height: 100%;
-  border-right: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    height: 100%;
+    border-right: 1px solid color-mix(in srgb, currentColor 12%, transparent);
 }
 
 .navigation__link--active {
-  background: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
+    background: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }

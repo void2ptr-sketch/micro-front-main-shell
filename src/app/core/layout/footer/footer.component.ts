@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './footer.component.scss',
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  readonly year = new Date().getFullYear();
+    readonly year = new Date().getFullYear();
 }

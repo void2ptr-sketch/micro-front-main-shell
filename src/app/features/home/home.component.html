@@ -1,22 +1,25 @@
 <mat-card class="home">
-  <mat-card-header>
-    <mat-card-title>{{ appName }}</mat-card-title>
-    <mat-card-subtitle>Главная точка входа пользователя</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      Host-приложение микрофронтенд-архитектуры на Angular с Module Federation (Native Federation).
-    </p>
-    <p>
-      Выберите нужное приложение в <strong>Главном меню</strong> в шапке — remote-модуль загрузится
-      после выбора, а его разделы появятся в левой навигации. Вернуться на главную можно через
-      меню <strong>Help</strong>.
-    </p>
-    <p>Зарегистрированные remote-приложения:</p>
-    <ul>
-      @for (remote of remoteEntries; track remote) {
-        <li><code>{{ remote }}</code></li>
-      }
-    </ul>
-  </mat-card-content>
+    <mat-card-header>
+        <mat-card-title>{{ appName }}</mat-card-title>
+        <mat-card-subtitle>Главная точка входа пользователя</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            Host-приложение микрофронтенд-архитектуры на Angular с Module Federation (Native
+            Federation).
+        </p>
+        <p>
+            Выберите нужное приложение в <strong>Главном меню</strong> в шапке — remote-модуль
+            загрузится после выбора, а его разделы появятся в левой навигации. Вернуться на главную
+            можно через меню <strong>Help</strong>.
+        </p>
+        <p>Зарегистрированные remote-приложения:</p>
+        <ul>
+            @for (remote of remoteEntries; track remote) {
+                <li>
+                    <code>{{ remote }}</code>
+                </li>
+            }
+        </ul>
+    </mat-card-content>
 </mat-card>

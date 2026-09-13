@@ -1,14 +1,14 @@
 <mat-toolbar color="primary" class="header">
-  <span class="header__title">{{ appName }}</span>
+    <span class="header__title">{{ appName }}</span>
 
-  <span class="header__spacer"></span>
+    <span class="header__spacer"></span>
 
-  <div class="header__actions">
-    <app-main-menu />
-    <app-help-menu />
-  </div>
+    <div class="header__actions">
+        <app-main-menu />
+        <app-help-menu />
+    </div>
 
-  @if (appState.isLoading()) {
-    <span class="header__status">Загрузка…</span>
-  }
+    @if (appState.isLoading()) {
+        <span class="header__status">Загрузка…</span>
+    }
 </mat-toolbar>
