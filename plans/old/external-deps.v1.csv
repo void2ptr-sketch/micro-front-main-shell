@@ -1,0 +1,140 @@
+name;version OLD;version NEW;URL к репозиторию;alternative;dependency;комментарий
+@angular-architects/module-federation;22.0.0;22.0.x;https://github.com/angular-architects/module-federation-plugin;npm install @angular-architects/module-federation@^22.0.0;direct;Классический Module Federation (Webpack). Версия закреплена за v22 (должна совпадать с major-версией Angular). Обновлять до последнего patch в 22.x. Переход на 23 требует обновления всего стека Angular. В проекте используется билдер native-federation, данный пакет может быть не нужен в runtime.
+@angular-architects/native-federation;22.1.2;22.1.x;https://github.com/native-federation/angular-adapter;npm install @angular-architects/native-federation@^22.1.2;direct;Адаптер Native Federation для Angular (основной билдер проекта, см. angular.json builder). Требует @angular/build ~22.1.x в качестве peerDependency.
+@angular-builders/jest;22.0.1;22.0.x;https://github.com/just-jeb/angular-builders;npm install @angular-builders/jest@^22.0.1;direct;Jest-builder для Angular. Peer-зависимости: @angular/core ^22, jest ^30, rxjs >=7. Должен совпадать по версии с Angular 22.
+@angular/animations;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/animations;npm install @angular/animations@^22.1.6;direct;Часть Angular. Обновлять все @angular/* синхронно. Переход на 23.x — отдельная миграция (ng update), не рекомендуется без необходимости.
+@angular/build;22.1.8;22.1.x;https://github.com/angular/angular-cli;npm install @angular/build@^22.1.8;direct;Официальный билдер Angular (esbuild/rolldown/vite). Требует typescript >=6.0 <6.1. Пиннит внутренние зависимости (esbuild 0.28.2, sass 1.101.0, vite 8.1.5, rolldown 1.2.0, oxc-parser 0.142.0) — их нельзя обновлять независимо.
+@angular/cdk;22.1.6;22.1.x;https://github.com/angular/components;npm install @angular/cdk@^22.1.6;direct;Angular Material CDK. peerDependencies допускают ^22 || ^23, но для согласованности держать на 22.x вместе с material и ядром Angular.
+@angular/cli;22.1.8;22.1.x;https://github.com/angular/angular-cli;npm install @angular/cli@^22.1.8;direct;CLI Angular. Версия должна быть согласована с @angular/build и @schematics/angular (packageGroup ng-update).
+@angular/common;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/common;npm install @angular/common@^22.1.6;direct;Часть Angular. peer: @angular/core 22.1.6, rxjs ^6.5.3||^7.4.0.
+@angular/compiler;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/compiler;npm install @angular/compiler@^22.1.6;direct;Часть Angular.
+@angular/compiler-cli;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/compiler-cli;npm install @angular/compiler-cli@^22.1.6;direct;Компилятор Angular CLI. peer: @angular/compiler 22.1.6, typescript >=6.0 <6.1 (ограничивает максимум TypeScript).
+@angular/core;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/core;npm install @angular/core@^22.1.6;direct;Ядро Angular. peer: @angular/compiler 22.1.6, rxjs, zone.js ~0.15||~0.16.
+@angular/forms;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/forms;npm install @angular/forms@^22.1.6;direct;Часть Angular.
+@angular/localize;22.1.6;22.1.x;https://github.com/angular/angular;npm install @angular/localize@^22.1.6;direct;Локализация. Используется как polyfill в angular.json (@angular/localize/init).
+@angular/material;22.1.6;22.1.x;https://github.com/angular/components;npm install @angular/material@^22.1.6;direct;Angular Material. peer: @angular/cdk 22.1.6, @angular/core ^22||^23. Подтягивается prebuilt-theme azure-blue.css (см. angular.json).
+@angular/platform-browser;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/platform-browser;npm install @angular/platform-browser@^22.1.6;direct;Часть Angular.
+@angular/platform-browser-dynamic;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/platform-browser-dynamic;npm install @angular/platform-browser-dynamic@^22.1.6;direct;Часть Angular.
+@angular/router;22.1.6;22.1.x;https://github.com/angular/angular/tree/main/packages/router;npm install @angular/router@^22.1.6;direct;Часть Angular.
+@eslint/js;10.0.1;10.x;https://github.com/eslint/eslint/tree/main/packages/js;npm install @eslint/js@^10.0.1;direct;Конфигурация ESLint (flat config). peer: eslint ^10.
+@softarc/native-federation-node;3.5.6;3.x;https://registry.npmjs.org/@softarc/native-federation-node;npm install @softarc/native-federation-node@^3.5.6;direct;Node-часть Native Federation. Подтягивает @softarc/native-federation-runtime ~3.5.x.
+@types/jest;30.0.0;30.x;https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jest;npm install @types/jest@^30.0.0;direct;Типы для Jest. Должен совпадать major с jest (30).
+angular-eslint;22.5.0;22.x;https://github.com/angular-eslint/angular-eslint;npm install angular-eslint@22.5.0;direct;Набор ESLint-инструментов для Angular. packageGroup включает builder, plugin, schematics, template-parser и др. Должен соответствовать major Angular (22).
+es-module-shims;2.8.4;2.x;https://github.com/guybedford/es-module-shims;npm install es-module-shims@^2.8.4;direct;Полифилл ES-module (нужен для Native Federation в браузере). Указан в polyfills в angular.json.
+eslint;10.10.0;10.x;https://github.com/eslint/eslint;npm install eslint@^10.10.0;direct;Линтер. peer для typescript-eslint ^8.57||^9||^10 и angular-eslint ^9||^10.
+eslint-config-prettier;10.1.8;10.x;https://github.com/prettier/eslint-config-prettier;npm install eslint-config-prettier@^10.1.8;direct;Отключает конфликтующие с Prettier правила ESLint. peer: eslint >=7.
+jest;30.5.1;30.x;https://github.com/jestjs/jest;npm install jest@^30.5.1;direct;Тест-раннер. peer для @angular-builders/jest и jest-preset-angular (^30).
+jest-environment-jsdom;30.5.1;30.x;https://github.com/jestjs/jest/tree/main/packages/jest-environment-jsdom;npm install jest-environment-jsdom@^30.5.1;direct;Окружение JSDOM для Jest. peer: canvas (optional).
+jest-preset-angular;17.0.0;17.x;https://github.com/thymikee/jest-preset-angular;npm install jest-preset-angular@^17.0.0;direct;Пресет Jest для Angular. peer: @angular/* >=20 <23, jest ^30, jsdom >=26, typescript >=5.8. Должен соответствовать Angular 22.
+prettier;3.9.6;3.x;https://github.com/prettier/prettier;npm install prettier@^3.9.6;direct;Форматтер кода.
+rxjs;7.8.2;7.x;https://github.com/reactivex/rxjs;npm install rxjs@~7.8.0;direct;Реактивные расширения. peer для всех @angular/* (^6.5.3||^7.4.0). Обновление до rxjs 8 потребует совместимости со всеми @angular/*.
+tslib;2.8.1;2.x;https://github.com/Microsoft/tslib;npm install tslib@^2.8.1;direct;Runtime-библиотека хелперов TypeScript. Лицензия 0BSD.
+typescript;6.0.3;6.0.x;https://github.com/microsoft/TypeScript;npm install typescript@~6.0.0;direct;Язык/компилятор. МАКСИМУМ ограничен: @angular/build и @angular/compiler-cli требуют typescript >=6.0 <6.1, поэтому нельзя ставить 6.1+/7.
+typescript-eslint;8.70.0;8.x;https://github.com/typescript-eslint/typescript-eslint;npm install typescript-eslint@^8.70.0;direct;Tooling ESLint+TS. peer: eslint ^8.57||^9||^10, typescript >=4.8.4 <6.1.
+zone.js;0.16.3;0.16.x;https://github.com/angular/angular/tree/main/packages/zone.js;npm install zone.js@~0.16.3;direct;Зоны JS. peer для @angular/core (~0.15||~0.16). Обновление до 0.17 — проверять совместимость с Angular 22.
+@ampproject/remapping;2.3.0;2.3.0;https://github.com/ampproject/remapping;npm install @ampproject/remapping;@angular/build;Точная версия запенена @angular/build. Не обновлять самостоятельно.
+@angular-builders/common;6.0.1;6.0.x;https://github.com/just-jeb/angular-builders;npm install @angular-builders/common;@angular-builders/jest;Общий код builders. Должен совпадать по major с @angular-builders/jest.
+@angular-devkit/architect;0.2201.x;0.2201.x;https://github.com/angular/angular-cli;npm install @angular-devkit/architect@^0.2201.0;@angular/build, @angular/cli, @angular-architects/native-federation, @angular-builders/jest;DevKit от Angular CLI. Версия фиксирована на 0.2201.x (major совпадает с Angular 22).
+@angular-devkit/core;22.1.x;22.1.x;https://github.com/angular/angular-cli;npm install @angular-devkit/core@^22.0.0;@angular-builders/jest, @angular/cli, @angular-architects/native-federation, angular-eslint;DevKit core. Согласован с Angular 22.
+@angular-devkit/schematics;22.1.x;22.1.x;https://github.com/angular/angular-cli;npm install @angular-devkit/schematics@^22.0.0;@angular-builders/jest, @angular/cli, @angular-architects/native-federation, angular-eslint;Schematics DevKit.
+@angular-eslint/builder;22.5.0;22.5.x;https://github.com/angular-eslint/angular-eslint;npm install @angular-eslint/builder@22.5.0;angular-eslint;Builder линта (используется в angular.json: @angular-eslint/builder:lint). Версия должна совпадать с angular-eslint.
+@angular-eslint/eslint-plugin;22.5.0;22.5.x;https://github.com/angular-eslint/angular-eslint;npm install @angular-eslint/eslint-plugin@22.5.0;angular-eslint;Правила для компонентов Angular.
+@angular-eslint/eslint-plugin-template;22.5.0;22.5.x;https://github.com/angular-eslint/angular-eslint;npm install @angular-eslint/eslint-plugin-template@22.5.0;angular-eslint;Правила для HTML-шаблонов Angular.
+@angular-eslint/schematics;22.5.0;22.5.x;https://github.com/angular-eslint/angular-eslint;npm install @angular-eslint/schematics@22.5.0;angular-eslint;Schematics для настройки линта.
+@angular-eslint/template-parser;22.5.0;22.5.x;https://github.com/angular-eslint/angular-eslint;npm install @angular-eslint/template-parser@22.5.0;angular-eslint;Парсер шаблонов.
+@angular-architects/module-federation-runtime;22.0.x;22.0.x;https://github.com/angular-architects/module-federation-plugin;npm install @angular-architects/module-federation-runtime;@angular-architects/module-federation;Runtime классического MF. Версия привязана к module-federation (~22.0).
+@babel/core;8.0.1;8.0.x;https://github.com/babel/babel;npm install @babel/core;@angular/build, @angular/compiler-cli, @angular/localize;Запенена версией 8.0.1 в @angular/build/localize/compiler-cli. Не обновлять независимо.
+@babel/helper-annotate-as-pure;8.0.0;8.0.x;https://github.com/babel/babel;npm install @babel/helper-annotate-as-pure;@angular/build;Точная версия запенена @angular/build.
+@babel/helper-split-export-declaration;7.24.7;7.24.x;https://github.com/babel/babel;npm install @babel/helper-split-export-declaration;@angular/build;Точная версия запенена @angular/build.
+@chialab/esbuild-plugin-commonjs;0.19.x;0.19.x;https://github.com/chialab/rna;npm install @chialab/esbuild-plugin-commonjs@^0.19.0;@angular-architects/native-federation;Плагин esbuild для CommonJS.
+@eslint-community/eslint-utils;4.x;4.x;https://github.com/eslint-community/eslint-utils;npm install @eslint-community/eslint-utils@^4.8.0;eslint;Утилиты ESLint.
+@eslint-community/regexpp;4.x;4.x;https://github.com/eslint-community/regexpp;npm install @eslint-community/regexpp@^4.12.2;eslint;Утилиты регулярных выражений.
+@eslint/config-array;0.23.x;0.23.x;https://github.com/eslint/eslint;npm install @eslint/config-array@^0.23.5;eslint;Внутренний модуль ESLint 10.
+@eslint/config-helpers;0.7.x;0.7.x;https://github.com/eslint/eslint;npm install @eslint/config-helpers@^0.7.0;eslint;Хелперы конфигурации ESLint.
+@eslint/core;1.x;1.x;https://github.com/eslint/eslint;npm install @eslint/core@^1.2.1;eslint;Ядро ESLint 10.
+@eslint/plugin-kit;0.7.x;0.7.x;https://github.com/eslint/eslint;npm install @eslint/plugin-kit@^0.7.3;eslint;Инструменты плагинов ESLint.
+@humanfs/node;0.16.x;0.16.x;https://github.com/humanwhocodes/humanfs;npm install @humanfs/node@^0.16.6;eslint;Файловая система для ESLint.
+@humanwhocodes/module-importer;1.0.1;1.x;https://github.com/humanwhocodes/module-importer;npm install @humanwhocodes/module-importer@^1.0.1;eslint;Импорт ESM-модулей.
+@humanwhocodes/retry;0.4.x;0.4.x;https://github.com/humanwhocodes/retry;npm install @humanwhocodes/retry@^0.4.2;eslint;Логика повторов.
+@inquirer/confirm;6.1.1;6.x;https://github.com/SBoudrias/Inquirer.js;npm install @inquirer/confirm;@angular/build;Интерактивные подсказки билдера.
+@inquirer/prompts;8.5.2;8.x;https://github.com/SBoudrias/Inquirer.js;npm install @inquirer/prompts;@angular/cli;Интерактивные подсказки CLI.
+@jest/core;30.5.1;30.x;https://github.com/jestjs/jest;npm install @jest/core@30.5.1;jest;Ядро Jest 30.
+@jest/environment;30.5.1;30.x;https://github.com/jestjs/jest;npm install @jest/environment@30.5.1;jest-environment-jsdom;Окружение Jest.
+@jest/environment-jsdom-abstract;30.5.1;30.x;https://github.com/jestjs/jest;npm install @jest/environment-jsdom-abstract;jest-environment-jsdom, jest-preset-angular;Абстрактное JSDOM-окружение.
+@jest/types;30.5.1;30.x;https://github.com/jestjs/jest;npm install @jest/types@30.5.1;jest;Типы Jest.
+@jridgewell/sourcemap-codec;1.4.x;1.4.x;https://github.com/jridgewell/sourcemap-codec;npm install @jridgewell/sourcemap-codec@^1.4.14;@angular/compiler-cli;Кодирование source-map.
+@listr2/prompt-adapter-inquirer;4.2.5;4.x;https://github.com/listr2/listr2;npm install @listr2/prompt-adapter-inquirer;@angular/cli;Адаптер подсказок listr2.
+@modelcontextprotocol/sdk;1.30.0;1.x;https://github.com/modelcontextprotocol/typescript-sdk;npm install @modelcontextprotocol/sdk;@angular/cli;SDK MCP (используется CLI Angular для AI-интеграций).
+@schematics/angular;22.1.x;22.1.x;https://github.com/angular/angular-cli;npm install @schematics/angular@^22.0.0;@angular/cli, @angular-builders/jest;Schematics Angular CLI (major 22).
+@softarc/native-federation;4.5.x;4.5.x;https://github.com/native-federation/native-federation-core;npm install @softarc/native-federation@~4.5.0;@angular-architects/native-federation;Ядро Native Federation.
+@softarc/native-federation-orchestrator;4.5.x;4.5.x;https://github.com/native-federation/native-federation-core;npm install @softarc/native-federation-orchestrator@^4.5.2;@angular-architects/native-federation;Оркестратор Native Federation.
+@softarc/native-federation-runtime;3.5.x;3.5.x;https://registry.npmjs.org/@softarc/native-federation-runtime;npm install @softarc/native-federation-runtime@~3.5.4;@softarc/native-federation-node;Runtime для native-federation-node. Должен совпадать major с native-federation-node (3).
+@standard-schema/spec;1.0.x;1.x;https://github.com/standard-schema/spec;npm install @standard-schema/spec@^1.0.0;@angular/forms;Спецификация стандартной схемы (для форм).
+@types/estree;1.0.x;1.0.x;https://github.com/DefinitelyTyped/DefinitelyTyped;npm install @types/estree@^1.0.6;eslint;Типы ESTree.
+@types/jsdom;21.x;21.x;https://github.com/DefinitelyTyped/DefinitelyTyped;npm install @types/jsdom@^21.1.7;jest-environment-jsdom;Типы JSDOM (устарели, но требуются jest-environment-jsdom).
+@typescript-eslint/eslint-plugin;8.70.0;8.x;https://github.com/typescript-eslint/typescript-eslint;npm install @typescript-eslint/eslint-plugin@8.70.0;typescript-eslint;Правила TS-линта. Версия совпадает с typescript-eslint.
+@typescript-eslint/parser;8.70.0;8.x;https://github.com/typescript-eslint/typescript-eslint;npm install @typescript-eslint/parser@8.70.0;typescript-eslint;Парсер TS для ESLint.
+@typescript-eslint/types;8.x;8.x;https://github.com/typescript-eslint/typescript-eslint;npm install @typescript-eslint/types@^8.0.0;angular-eslint;Типы typescript-eslint.
+@typescript-eslint/typescript-estree;8.70.0;8.x;https://github.com/typescript-eslint/typescript-eslint;npm install @typescript-eslint/typescript-estree@8.70.0;typescript-eslint;ESTree для TS.
+@typescript-eslint/utils;8.70.0;8.x;https://github.com/typescript-eslint/typescript-eslint;npm install @typescript-eslint/utils;angular-eslint, typescript-eslint;Утилиты typescript-eslint.
+@vitejs/plugin-basic-ssl;2.3.0;2.3.x;https://github.com/vitejs/vite-plugin-basic-ssl;npm install @vitejs/plugin-basic-ssl;@angular/build;Плагин Vite для SSL (dev-server). Точная версия запенена @angular/build.
+ajv;6.14.x;6.14.x;https://github.com/ajv-validator/ajv;npm install ajv@^6.14.0;eslint;JSON Schema валидатор. Версия 6 (не 8) требуется ESLint 10.
+beasties;0.4.3;0.4.x;https://github.com/maltsev/beasties;npm install beasties;@angular/build;Inlining критического CSS (преемник critters). Точная версия запенена @angular/build.
+browserslist;4.26.x;4.x;https://github.com/browserslist/browserslist;npm install browserslist@^4.26.0;@angular/build;Список целевых браузеров.
+bs-logger;0.2.6;0.2.x;https://github.com/huafu/bs-logger;npm install bs-logger@^0.2.6;jest-preset-angular;Логгер.
+chalk;5.6.x;5.x;https://github.com/chalk/chalk;npm install chalk@^5.6.2;@angular-architects/module-federation;Цветной вывод в терминал.
+chokidar;5.0.x;5.x;https://github.com/paulmillr/chokidar;npm install chokidar@^5.0.0;@angular/compiler-cli;Наблюдатель за файлами.
+convert-source-map;1.5.x;1.5.x;https://github.com/thlorenz/convert-source-map;npm install convert-source-map@^1.5.1;@angular/compiler-cli;Преобразование source-map.
+cross-spawn;7.0.x;7.x;https://github.com/moxystudio/node-cross-spawn;npm install cross-spawn@^7.0.6;eslint;Кроссплатформенный spawn.
+debug;4.x;4.x;https://github.com/debug-js/debug;npm install debug@^4.3.2;eslint;Дебаг-логгер.
+escape-string-regexp;4.0.0;4.x;https://github.com/sindresorhus/escape-string-regexp;npm install escape-string-regexp@^4.0.0;eslint;Экранирование regexp.
+esbuild;0.28.2;0.28.x;https://github.com/evanw/esbuild;npm install esbuild@^0.28.0;@angular/build, @angular-architects/native-federation, jest-preset-angular;Бандлер. В @angular/build запенена точно 0.28.2 (см. allowScripts). Обновление мажора потребует обновления Angular/build.
+esbuild-wasm;0.28.x;0.28.x;https://github.com/evanw/esbuild;npm install esbuild-wasm@>=0.28.0;jest-preset-angular;WASM-версия esbuild.
+eslint-scope;9.x;9.x;https://github.com/eslint/eslint-scope;npm install eslint-scope@^9.1.2;eslint;Работа с областями видимости.
+eslint-visitor-keys;5.x;5.x;https://github.com/eslint/eslint-visitor-keys;npm install eslint-visitor-keys@^5.0.1;eslint;Ключи посетителей.
+espree;11.x;11.x;https://github.com/eslint/espree;npm install espree@^11.2.0;eslint;Парсер JavaScript (ECMAScript).
+esquery;1.7.x;1.7.x;https://github.com/estools/esquery;npm install esquery@^1.7.0;eslint;Поиск по AST.
+esutils;2.0.x;2.0.x;https://github.com/estools/esutils;npm install esutils@^2.0.2;eslint;Утилиты работы с AST.
+expect;30.x;30.x;https://github.com/jestjs/jest;npm install expect@^30.0.0;@types/jest;Матчеры Jest (для типов).
+fast-deep-equal;3.1.x;3.x;https://github.com/epoberezkin/fast-deep-equal;npm install fast-deep-equal@^3.1.3;eslint;Быстрое глубокое сравнение.
+file-entry-cache;11.1.5;11.x;https://github.com/royriojas/file-entry-cache;npm install file-entry-cache@11.1.5;eslint;Кэш записей файлов.
+find-up;5.0.0;5.x;https://github.com/sindresorhus/find-up;npm install find-up@^5.0.0;eslint;Поиск каталога вверх по дереву.
+glob-parent;6.0.x;6.x;https://github.com/gulpjs/glob-parent;npm install glob-parent@^6.0.2;eslint;Родитель glob-шаблона.
+https-proxy-agent;9.1.0;9.x;https://github.com/TooTallNate/proxy-agents;npm install https-proxy-agent;@angular/build;Прокси-агент HTTPS. Точная версия запенена @angular/build.
+ignore;5.x;5.x;https://github.com/kaelzhang/node-ignore;npm install ignore@^5.2.0;eslint;Работа с .gitignore-правилами.
+import-local;3.x;3.x;https://github.com/sindresorhus/import-local;npm install import-local@^3.2.0;jest;Импорт локального CLI.
+imurmurhash;0.1.4;0.1.x;https://github.com/jensyt/imurmurhash-js;npm install imurmurhash@^0.1.4;eslint;MurmurHash (для кэшей).
+is-glob;4.0.x;4.x;https://github.com/micromatch/is-glob;npm install is-glob@^4.0.0;eslint;Проверка glob-шаблона.
+jest-cli;30.5.1;30.x;https://github.com/jestjs/jest;npm install jest-cli@30.5.1;jest;CLI Jest.
+jest-util;30.x;30.x;https://github.com/jestjs/jest;npm install jest-util@^30.4.1;jest-preset-angular;Утилиты Jest.
+jsdom;26.x;26.x;https://github.com/jsdom/jsdom;npm install jsdom@^26.1.0;jest-environment-jsdom;DOM-эмуляция для тестов. peer для jest-preset-angular (>=26).
+json-stable-stringify-without-jsonify;1.0.1;1.x;https://github.com/samn/json-stable-stringify;npm install json-stable-stringify-without-jsonify@^1.0.1;eslint;Стабильная сериализация JSON.
+jsonc-parser;3.3.1;3.x;https://github.com/microsoft/node-jsonc-parser;npm install jsonc-parser;@angular/build, @angular/cli;Парсер JSONC.
+listr2;11.0.0;11.x;https://github.com/listr2/listr2;npm install listr2;@angular/build, @angular/cli;Список задач в терминале.
+lmdb;3.5.6;3.5.x;https://github.com/kriszyp/lmdb-js;npm install lmdb;@angular/build;БД LMDB (optionalDependency @angular/build, см. allowScripts). Точная версия запенена.
+lodash;4.17.x;4.17.x;https://github.com/lodash/lodash;npm install lodash@^4.17.15;@angular-builders/jest;Утилиты. Мажор 4 — стабильный, обновления только патч.
+magic-string;1.0.0;1.x;https://github.com/rich-harris/magic-string;npm install magic-string;@angular/build;Работа со строками source-map.
+minimatch;10.x;10.x;https://github.com/isaacs/minimatch;npm install minimatch@^10.2.5;eslint;Сопоставление glob.
+mrmime;2.0.1;2.x;https://github.com/lukeed/mrmime;npm install mrmime;@angular/architects/native-federation, @angular/build;MIME-типы.
+natural-compare;1.4.0;1.4.x;https://github.com/litejs/natural-compare-lite;npm install natural-compare@^1.4.0;eslint;Естественное сравнение строк.
+node-fetch;3.3.x;3.x;https://github.com/node-fetch/node-fetch;npm install node-fetch@^3.3.2;@angular-architects/module-federation;Fetch для Node. v3 — ESM-only, стабильна.
+npm-package-arg;14.0.0;14.x;https://github.com/npm/npm-package-arg;npm install npm-package-arg;@angular/cli;Разбор аргументов npm-пакетов.
+optionator;0.9.x;0.9.x;https://github.com/gkz/optionator;npm install optionator@^0.9.3;eslint;Разбор опций командной строки.
+oxc-parser;0.142.0;0.142.x;https://github.com/oxc-project/oxc;npm install oxc-parser;@angular/build;Быстрый парсер (Rust/WASM). Точная версия запенена @angular/build.
+parse5;8.x;8.x;https://github.com/inikulin/parse5;npm install parse5@^8.0.0;@angular/cdk;HTML-парсер.
+parse5-html-rewriting-stream;8.0.1;8.x;https://github.com/inikulin/parse5;npm install parse5-html-rewriting-stream;@angular/build, @angular/cli;Стриминговая перезапись HTML.
+picomatch;4.0.5;4.x;https://github.com/micromatch/picomatch;npm install picomatch;@angular/build;Сопоставление glob.
+piscina;5.2.0;5.x;https://github.com/piscinajs/piscina;npm install piscina;@angular/build;Пул воркеров (Node worker_threads).
+pretty-format;30.x;30.x;https://github.com/jestjs/jest;npm install pretty-format@^30.0.0;@types/jest, jest-preset-angular;Форматирование значений в Jest.
+reflect-metadata;0.2.x;0.2.x;https://github.com/rbuckton/reflect-metadata;npm install reflect-metadata@^0.2.0;@angular/compiler-cli;Полифилл декораторов-метаданных.
+rolldown;1.2.0;1.2.x;https://github.com/rolldown/rolldown;npm install rolldown;@angular/build;Бандлер (Rust), используется в prod-сборке Angular. Точная версия запенена @angular/build.
+sass;1.101.0;1.101.x;https://github.com/sass/dart-sass;npm install sass;@angular/build;Компилятор SCSS (стили проекта). Точная версия запенена @angular/build.
+semver;7.8.x;7.8.x;https://github.com/npm/node-semver;npm install semver@^7.0.0;@angular-architects/module-federation, @angular/build, @angular/cli, @angular/compiler-cli;Парсер семантических версий.
+source-map-support;0.5.21;0.5.x;https://github.com/evanw/node-source-map-support;npm install source-map-support;@angular/build;Поддержка source-map в Node.
+tinyglobby;0.2.17;0.2.x;https://github.com/SuperchupuDev/tinyglobby;npm install tinyglobby@^0.2.12;@angular/build, @angular/localize;Быстрый поиск glob (globby на Rust).
+ts-jest;29.4.x;29.x;https://github.com/kulshekhar/ts-jest;npm install ts-jest@^29.4.11;jest-preset-angular;Транспиляция TS для Jest. Мажор 29.
+vite;8.1.5;8.1.x;https://github.com/vitejs/vite;npm install vite;@angular/build;Dev-сервер Vite. Точная версия запенена @angular/build.
+watchpack;2.5.2;2.5.x;https://github.com/webpack/watchpack;npm install watchpack;@angular-architects/native-federation, @angular/build;Наблюдатель за изменениями файлов.
+word-wrap;1.2.x;1.2.x;https://github.com/jonschlinkert/word-wrap;npm install word-wrap@^1.2.5;@angular-architects/module-federation;Перенос строк.
+yargs;18.x;18.x;https://github.com/yargs/yargs;npm install yargs@^18.0.0;@angular/cli, @angular/compiler-cli, @angular/localize;Разбор CLI-аргументов.
+zod;4.x;4.x;https://github.com/colinhacks/zod;npm install zod@^4.0.10;@angular/cli, @angular/forms;Валидация схем. v4 — текущий мажор.

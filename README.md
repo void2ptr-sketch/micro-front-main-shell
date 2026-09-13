@@ -4,7 +4,7 @@
 
 ## Стек
 
-- Angular 19 (standalone components)
+- Angular 22 (standalone components)
 - Angular Material
 - Native Federation (`@angular-architects/native-federation`)
 - Signals для глобального состояния
@@ -40,11 +40,10 @@ src/app/
 │   ├── interceptors/   # auth, error, loading
 │   ├── layout/         # header, footer, navigation, main-layout
 │   └── services/       # AppStateService (signals)
-├── shared/
-│   └── types/          # общие типы API
 ├── features/
+│   ├── cloudberry/
 │   ├── home/
-│   └── security/       # смена пароля
+│   └── personal-profile/
 └── app.routes.ts
 ```
 
@@ -54,7 +53,8 @@ Host регистрирует remote-точки в `src/environments/environment
 
 ```typescript
 remoteEntries: {
-  cloudberry: 'http://localhost:4201/remoteEntry.json',
+  cloudberry: 'http://localhost:4201/remoteEntry.js',
+  'personal-profile': 'http://localhost:4202/remoteEntry.js',
 }
 ```
 
@@ -73,6 +73,18 @@ npm start
 ```
 
 Маршрут в shell: `/cloudberry/dashboard` (и остальные страницы Cloudberry под `/cloudberry/*`).
+
+### Personal Profile (remote)
+
+Remote-приложение: [`micro-front-personal-profile`](../micro-front-personal-profile) — Personal Profile SPA.
+
+```bash
+# Терминал 1 — remote (порт 4202)
+cd ../micro-front-personal-profile && npm start
+
+# Терминал 2 — host (порт 4200)
+npm start
+```
 
 ## Окружения
 
@@ -96,5 +108,5 @@ GitHub Actions (`.github/workflows/ci.yml`): lint → format check → test → 
 Shell-приложение объединяет:
 
 - общий layout (шапка, навигация, контент, подвал)
-- локальные фичи (security — смена пароля)
+- локальные фичи (home)
 - remote micro frontends через Module Federation

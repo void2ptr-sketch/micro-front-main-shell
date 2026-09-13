@@ -1,0 +1,3682 @@
+{
+  "version": "0.0.0",
+  "name": "micro-front-main-shell",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "test:watch": "ng test",
+    "test:coverage": "ng test --watch=false --coverage",
+    "test:ci": "ng test --watch=false --ci",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "format": "prettier --write \"src/**/*.{ts,html,scss,json}\" \"*.{json,js,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\" \"*.{json,js,md}\""
+  },
+  "private": true,
+  "devDependencies": {
+    "@angular-builders/jest": "^22.0.1",
+    "@angular/build": "^22.1.8",
+    "@angular/cli": "^22.1.8",
+    "@angular/compiler-cli": "^22.1.6",
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "angular-eslint": "22.5.0",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.5.1",
+    "jest-environment-jsdom": "^30.5.1",
+    "jest-preset-angular": "^17.0.0",
+    "prettier": "^3.9.6",
+    "typescript": "~6.0.0",
+    "typescript-eslint": "^8.70.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "@parcel/watcher@2.6.0": true,
+    "lmdb@3.5.6": true,
+    "msgpackr-extract@3.0.4": true
+  },
+  "_id": "micro-front-main-shell@0.0.0",
+  "extraneous": false,
+  "path": "/home/alex/workspace/Angular.micro-front-main-shell",
+  "_dependencies": {
+    "@angular-architects/module-federation": "^22.0.0",
+    "@angular-architects/native-federation": "^22.1.2",
+    "@angular/animations": "^22.1.6",
+    "@angular/cdk": "^22.1.6",
+    "@angular/common": "^22.1.6",
+    "@angular/compiler": "^22.1.6",
+    "@angular/core": "^22.1.6",
+    "@angular/forms": "^22.1.6",
+    "@angular/localize": "^22.1.6",
+    "@angular/material": "^22.1.6",
+    "@angular/platform-browser": "^22.1.6",
+    "@angular/platform-browser-dynamic": "^22.1.6",
+    "@angular/router": "^22.1.6",
+    "@softarc/native-federation-node": "^3.5.6",
+    "es-module-shims": "^2.8.4",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.16.3"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@angular-architects/module-federation": {
+      "version": "22.0.0",
+      "resolved": "https://registry.npmjs.org/@angular-architects/module-federation/-/module-federation-22.0.0.tgz",
+      "overridden": false,
+      "name": "@angular-architects/module-federation",
+      "license": "MIT",
+      "repository": {
+        "type": "GitHub",
+        "url": "https://github.com/angular-architects/module-federation-plugin"
+      },
+      "author": {
+        "name": "Manfred Steyer",
+        "email": "manfred.steyer@gmx.net",
+        "url": "https://www.angulararchitects.io"
+      },
+      "module": "src/index.js",
+      "ES2015": "./src/index.js",
+      "sideEffects": false,
+      "schematics": "./collection.json",
+      "builders": "./builders.json",
+      "peerDependencies": {},
+      "ng-update": {
+        "migrations": "./migrations.json",
+        "package-group": [
+          "@angular-architects/module-federation-tools",
+          "@angular-builders/custom-webpack"
+        ]
+      },
+      "types": "./src/index.d.ts",
+      "main": "./src/index.js",
+      "type": "commonjs",
+      "_id": "@angular-architects/module-federation@22.0.0",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular-architects/module-federation",
+      "_dependencies": {
+        "@angular-architects/module-federation-runtime": "~22.0.0",
+        "word-wrap": "^1.2.5",
+        "chalk": "^5.6.2",
+        "node-fetch": "^3.3.2",
+        "semver": "~7.8.5"
+      },
+      "devDependencies": {}
+    },
+    "@angular-architects/native-federation": {
+      "version": "22.1.2",
+      "resolved": "https://registry.npmjs.org/@angular-architects/native-federation/-/native-federation-22.1.2.tgz",
+      "overridden": false,
+      "name": "@angular-architects/native-federation",
+      "generators": "./collection.json",
+      "builders": "./builders.json",
+      "schematics": "./collection.json",
+      "license": "MIT",
+      "author": {
+        "name": "Native federation team",
+        "url": "http://www.angulararchitects.io"
+      },
+      "peerDependencies": {
+        "@angular/build": "~22.1.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/native-federation/angular-adapter"
+      },
+      "ng-update": {
+        "migrations": "./migration-collection.json"
+      },
+      "exports": {
+        "./package.json": "./package.json",
+        ".": {
+          "types": "./src/index.d.ts",
+          "import": "./src/index.js",
+          "default": "./src/index.js"
+        },
+        "./config": {
+          "types": "./src/config.d.ts",
+          "import": "./src/config.js",
+          "default": "./src/config.js"
+        },
+        "./internal": {
+          "types": "./src/internal.d.ts",
+          "import": "./src/internal.js",
+          "default": "./src/internal.js"
+        },
+        "./node-preload": {
+          "types": "./src/node-preload.d.ts",
+          "import": "./src/node-preload.js",
+          "default": "./src/node-preload.js"
+        }
+      },
+      "homepage": "https://github.com/native-federation/angular-adapter",
+      "type": "module",
+      "files": [
+        "src",
+        "collection.json",
+        "generators.json",
+        "builders.json",
+        "migration-collection.json",
+        "README.md",
+        "LICENSE",
+        "!**/*.tsbuildinfo"
+      ],
+      "types": "./src/index.d.ts",
+      "module": "./src/index.js",
+      "main": "./src/index.js",
+      "_id": "@angular-architects/native-federation@22.1.2",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular-architects/native-federation",
+      "_dependencies": {
+        "@angular-devkit/architect": "^0.2201.0",
+        "@angular-devkit/core": "~22.1.0",
+        "@angular-devkit/schematics": "~22.1.0",
+        "@chialab/esbuild-plugin-commonjs": "^0.19.0",
+        "@softarc/native-federation": "~4.5.0",
+        "@softarc/native-federation-orchestrator": "^4.5.2",
+        "es-module-shims": "^2.8.0",
+        "esbuild": "^0.28.0",
+        "mrmime": "^2.0.1",
+        "watchpack": "^2.5.2"
+      },
+      "devDependencies": {}
+    },
+    "@angular-builders/jest": {
+      "version": "22.0.1",
+      "resolved": "https://registry.npmjs.org/@angular-builders/jest/-/jest-22.0.1.tgz",
+      "overridden": false,
+      "name": "@angular-builders/jest",
+      "description": "Jest runner for Angular build facade. Allows ng test run with Jest instead of Karma",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/just-jeb/angular-builders",
+        "directory": "packages/jest"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": "JeB Barabanov",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+      },
+      "main": "dist/index.js",
+      "files": [
+        "dist",
+        "builders.json"
+      ],
+      "keywords": [
+        "jest",
+        "testing",
+        "test",
+        "angular",
+        "cli",
+        "builder",
+        "runner"
+      ],
+      "builders": "builders.json",
+      "schematics": "./dist/schematics/collection.json",
+      "ng-add": {
+        "save": "devDependencies"
+      },
+      "ng-update": {
+        "migrations": "./dist/schematics/migrations.json"
+      },
+      "scripts": {
+        "prebuild": "yarn clean && yarn generate",
+        "build": "yarn prebuild && tsc -p tsconfig.lib.json && tsc -p tsconfig.schematics.json && yarn copy:schematics && yarn postbuild",
+        "copy:schematics": "copyfiles -u 2 \"src/schematics/**/*.json\" dist/schematics && copyfiles -u 2 \"src/schematics/**/files/**\" dist/schematics",
+        "postbuild": "yarn copy && yarn test",
+        "test": "jest --config ../../jest-ut.config.js",
+        "e2e": "jest --config ../../jest-e2e.config.js",
+        "clean": "rimraf dist src/schema.ts",
+        "copy": "cpy --flat src/schema.json dist",
+        "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
+      },
+      "peerDependencies": {
+        "@angular-devkit/build-angular": "^22.0.0",
+        "@angular/compiler-cli": "^22.0.0",
+        "@angular/core": "^22.0.0",
+        "@angular/platform-browser-dynamic": "^22.0.0",
+        "jest": "^30.0.0",
+        "rxjs": ">=7.0.0"
+      },
+      "devDependencies": {
+        "@types/jest": "^30.0.0",
+        "copyfiles": "^2.4.1",
+        "cpy-cli": "^7.0.0",
+        "jest": "30.4.2",
+        "quicktype": "^15.0.260",
+        "rimraf": "^6.0.0",
+        "typescript": "6.0.3"
+      },
+      "gitHead": "0a130aee6f695fed717d668832b22bbc655d9ad8",
+      "_id": "@angular-builders/jest@22.0.1",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular-builders/jest",
+      "_dependencies": {
+        "@angular-builders/common": "6.0.1",
+        "@angular-devkit/architect": ">=0.2200.0 < 0.2300.0",
+        "@angular-devkit/core": "^22.0.0",
+        "@angular-devkit/schematics": "^22.0.0",
+        "@schematics/angular": "^22.0.0",
+        "jest-preset-angular": "^17.0.0",
+        "lodash": "^4.17.15"
+      }
+    },
+    "@angular/animations": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/animations",
+      "description": "Angular - animations integration with web-animations",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "peerDependencies": {
+        "@angular/core": "22.1.6"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/animations"
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": false,
+      "module": "./fesm2022/animations.mjs",
+      "typings": "./types/animations.d.ts",
+      "type": "module",
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/animations.d.ts",
+          "default": "./fesm2022/animations.mjs"
+        },
+        "./browser": {
+          "types": "./types/browser.d.ts",
+          "default": "./fesm2022/browser.mjs"
+        },
+        "./browser/testing": {
+          "types": "./types/browser-testing.d.ts",
+          "default": "./fesm2022/browser-testing.mjs"
+        }
+      },
+      "_id": "@angular/animations@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/animations",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      },
+      "devDependencies": {}
+    },
+    "@angular/build": {
+      "version": "22.1.8",
+      "resolved": "https://registry.npmjs.org/@angular/build/-/build-22.1.8.tgz",
+      "overridden": false,
+      "name": "@angular/build",
+      "description": "Official build system for Angular",
+      "keywords": [
+        "Angular CLI",
+        "Angular DevKit",
+        "angular",
+        "angular-cli",
+        "devkit",
+        "sdk"
+      ],
+      "exports": {
+        ".": {
+          "types": "./src/index.d.ts",
+          "default": "./src/index.js"
+        },
+        "./private": {
+          "default": "./src/private.js"
+        },
+        "./package.json": "./package.json"
+      },
+      "builders": "builders.json",
+      "optionalDependencies": {
+        "lmdb": "3.5.6"
+      },
+      "peerDependencies": {
+        "@angular/compiler": "^22.0.0",
+        "@angular/compiler-cli": "^22.0.0",
+        "@angular/core": "^22.0.0",
+        "@angular/localize": "^22.0.0",
+        "@angular/platform-browser": "^22.0.0",
+        "@angular/platform-server": "^22.0.0",
+        "@angular/service-worker": "^22.0.0",
+        "@angular/ssr": "^22.1.8",
+        "istanbul-lib-instrument": "^6.0.0",
+        "karma": "^6.4.0",
+        "less": "^4.2.0",
+        "ng-packagr": "^22.0.0",
+        "postcss": "^8.4.0",
+        "rollup": "^4.0.0",
+        "tailwindcss": "^2.0.0 || ^3.0.0 || ^4.0.0",
+        "tslib": "^2.3.0",
+        "typescript": ">=6.0 <6.1",
+        "vitest": "^4.0.8"
+      },
+      "peerDependenciesMeta": {
+        "@angular/core": {
+          "optional": true
+        },
+        "@angular/localize": {
+          "optional": true
+        },
+        "@angular/platform-browser": {
+          "optional": true
+        },
+        "@angular/platform-server": {
+          "optional": true
+        },
+        "@angular/service-worker": {
+          "optional": true
+        },
+        "@angular/ssr": {
+          "optional": true
+        },
+        "istanbul-lib-instrument": {
+          "optional": true
+        },
+        "karma": {
+          "optional": true
+        },
+        "less": {
+          "optional": true
+        },
+        "ng-packagr": {
+          "optional": true
+        },
+        "postcss": {
+          "optional": true
+        },
+        "rollup": {
+          "optional": true
+        },
+        "tailwindcss": {
+          "optional": true
+        },
+        "vitest": {
+          "optional": true
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular/angular-cli.git"
+      },
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0",
+        "npm": "^6.11.0 || ^7.5.6 || >=8.0.0",
+        "yarn": ">= 1.13.0"
+      },
+      "author": "Angular Authors",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/angular/angular-cli/issues"
+      },
+      "homepage": "https://github.com/angular/angular-cli",
+      "_id": "@angular/build@22.1.8",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/build",
+      "_dependencies": {
+        "@ampproject/remapping": "2.3.0",
+        "@angular-devkit/architect": "0.2201.8",
+        "@babel/core": "8.0.1",
+        "@babel/helper-annotate-as-pure": "8.0.0",
+        "@babel/helper-split-export-declaration": "7.24.7",
+        "@inquirer/confirm": "6.1.1",
+        "@vitejs/plugin-basic-ssl": "2.3.0",
+        "beasties": "0.4.3",
+        "browserslist": "^4.26.0",
+        "esbuild": "0.28.2",
+        "https-proxy-agent": "9.1.0",
+        "jsonc-parser": "3.3.1",
+        "listr2": "11.0.0",
+        "magic-string": "1.0.0",
+        "mrmime": "2.0.1",
+        "oxc-parser": "0.142.0",
+        "parse5-html-rewriting-stream": "8.0.1",
+        "picomatch": "4.0.5",
+        "piscina": "5.2.0",
+        "rolldown": "1.2.0",
+        "sass": "1.101.0",
+        "semver": "7.8.5",
+        "source-map-support": "0.5.21",
+        "tinyglobby": "0.2.17",
+        "vite": "8.1.5",
+        "watchpack": "2.5.2",
+        "lmdb": "3.5.6"
+      },
+      "devDependencies": {}
+    },
+    "@angular/cdk": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/cdk/-/cdk-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/cdk",
+      "description": "Angular Material Component Development Kit",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/components.git"
+      },
+      "keywords": [
+        "angular",
+        "cdk",
+        "component",
+        "development",
+        "kit"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/angular/components/issues"
+      },
+      "homepage": "https://github.com/angular/components#readme",
+      "exports": {
+        ".": {
+          "sass": "./_index.scss",
+          "types": "./types/cdk.d.ts",
+          "default": "./fesm2022/cdk.mjs"
+        },
+        "./a11y-prebuilt.css": {
+          "style": "./a11y-prebuilt.css"
+        },
+        "./a11y-prebuilt": {
+          "style": "./a11y-prebuilt.css"
+        },
+        "./overlay-prebuilt.css": {
+          "style": "./overlay-prebuilt.css"
+        },
+        "./overlay-prebuilt": {
+          "style": "./overlay-prebuilt.css"
+        },
+        "./text-field-prebuilt.css": {
+          "style": "./text-field-prebuilt.css"
+        },
+        "./text-field-prebuilt": {
+          "style": "./text-field-prebuilt.css"
+        },
+        "./schematics": {
+          "default": "./schematics/index.js"
+        },
+        "./package.json": {
+          "default": "./package.json"
+        },
+        "./a11y": {
+          "types": "./types/a11y.d.ts",
+          "default": "./fesm2022/a11y.mjs"
+        },
+        "./accordion": {
+          "types": "./types/accordion.d.ts",
+          "default": "./fesm2022/accordion.mjs"
+        },
+        "./bidi": {
+          "types": "./types/bidi.d.ts",
+          "default": "./fesm2022/bidi.mjs"
+        },
+        "./clipboard": {
+          "types": "./types/clipboard.d.ts",
+          "default": "./fesm2022/clipboard.mjs"
+        },
+        "./coercion": {
+          "types": "./types/coercion.d.ts",
+          "default": "./fesm2022/coercion.mjs"
+        },
+        "./coercion/private": {
+          "types": "./types/coercion-private.d.ts",
+          "default": "./fesm2022/coercion-private.mjs"
+        },
+        "./collections": {
+          "types": "./types/collections.d.ts",
+          "default": "./fesm2022/collections.mjs"
+        },
+        "./dialog": {
+          "types": "./types/dialog.d.ts",
+          "default": "./fesm2022/dialog.mjs"
+        },
+        "./drag-drop": {
+          "types": "./types/drag-drop.d.ts",
+          "default": "./fesm2022/drag-drop.mjs"
+        },
+        "./keycodes": {
+          "types": "./types/keycodes.d.ts",
+          "default": "./fesm2022/keycodes.mjs"
+        },
+        "./layout": {
+          "types": "./types/layout.d.ts",
+          "default": "./fesm2022/layout.mjs"
+        },
+        "./listbox": {
+          "types": "./types/listbox.d.ts",
+          "default": "./fesm2022/listbox.mjs"
+        },
+        "./menu": {
+          "types": "./types/menu.d.ts",
+          "default": "./fesm2022/menu.mjs"
+        },
+        "./observers": {
+          "types": "./types/observers.d.ts",
+          "default": "./fesm2022/observers.mjs"
+        },
+        "./observers/private": {
+          "types": "./types/observers-private.d.ts",
+          "default": "./fesm2022/observers-private.mjs"
+        },
+        "./overlay": {
+          "types": "./types/overlay.d.ts",
+          "default": "./fesm2022/overlay.mjs"
+        },
+        "./platform": {
+          "types": "./types/platform.d.ts",
+          "default": "./fesm2022/platform.mjs"
+        },
+        "./portal": {
+          "types": "./types/portal.d.ts",
+          "default": "./fesm2022/portal.mjs"
+        },
+        "./private": {
+          "types": "./types/private.d.ts",
+          "default": "./fesm2022/private.mjs"
+        },
+        "./scrolling": {
+          "types": "./types/scrolling.d.ts",
+          "default": "./fesm2022/scrolling.mjs"
+        },
+        "./stepper": {
+          "types": "./types/stepper.d.ts",
+          "default": "./fesm2022/stepper.mjs"
+        },
+        "./table": {
+          "types": "./types/table.d.ts",
+          "default": "./fesm2022/table.mjs"
+        },
+        "./testing": {
+          "types": "./types/testing.d.ts",
+          "default": "./fesm2022/testing.mjs"
+        },
+        "./testing/selenium-webdriver": {
+          "types": "./types/testing-selenium-webdriver.d.ts",
+          "default": "./fesm2022/testing-selenium-webdriver.mjs"
+        },
+        "./testing/testbed": {
+          "types": "./types/testing-testbed.d.ts",
+          "default": "./fesm2022/testing-testbed.mjs"
+        },
+        "./text-field": {
+          "types": "./types/text-field.d.ts",
+          "default": "./fesm2022/text-field.mjs"
+        },
+        "./tree": {
+          "types": "./types/tree.d.ts",
+          "default": "./fesm2022/tree.mjs"
+        }
+      },
+      "peerDependencies": {
+        "@angular/core": "^22.0.0 || ^23.0.0",
+        "@angular/common": "^22.0.0 || ^23.0.0",
+        "@angular/forms": "^22.0.0 || ^23.0.0",
+        "@angular/platform-browser": "^22.0.0 || ^23.0.0",
+        "rxjs": "^6.5.3 || ^7.4.0"
+      },
+      "schematics": "./schematics/collection.json",
+      "ng-update": {
+        "migrations": "./schematics/migration.json",
+        "packageGroup": [
+          "@angular/material",
+          "@angular/aria",
+          "@angular/cdk",
+          "@angular/cdk-experimental",
+          "@angular/material-experimental",
+          "@angular/material-luxon-adapter",
+          "@angular/material-moment-adapter",
+          "@angular/material-date-fns-adapter"
+        ]
+      },
+      "sideEffects": false,
+      "module": "./fesm2022/cdk.mjs",
+      "typings": "./types/cdk.d.ts",
+      "type": "module",
+      "_id": "@angular/cdk@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/cdk",
+      "_dependencies": {
+        "parse5": "^8.0.0",
+        "tslib": "^2.3.0"
+      },
+      "devDependencies": {}
+    },
+    "@angular/cli": {
+      "version": "22.1.8",
+      "resolved": "https://registry.npmjs.org/@angular/cli/-/cli-22.1.8.tgz",
+      "overridden": false,
+      "name": "@angular/cli",
+      "description": "CLI tool for Angular",
+      "main": "lib/cli/index.js",
+      "bin": {
+        "ng": "bin/ng.js"
+      },
+      "keywords": [
+        "Angular CLI",
+        "Angular DevKit",
+        "angular",
+        "angular-cli",
+        "devkit",
+        "sdk"
+      ],
+      "ng-update": {
+        "migrations": "@schematics/angular/migrations/migration-collection.json",
+        "packageGroup": {
+          "@angular/cli": "22.1.8",
+          "@angular/build": "22.1.8",
+          "@angular/ssr": "22.1.8",
+          "@angular-devkit/architect": "0.2201.8",
+          "@angular-devkit/build-angular": "22.1.8",
+          "@angular-devkit/build-webpack": "0.2201.8",
+          "@angular-devkit/core": "22.1.8",
+          "@angular-devkit/schematics": "22.1.8"
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular/angular-cli.git"
+      },
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0",
+        "npm": "^6.11.0 || ^7.5.6 || >=8.0.0",
+        "yarn": ">= 1.13.0"
+      },
+      "author": "Angular Authors",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/angular/angular-cli/issues"
+      },
+      "homepage": "https://github.com/angular/angular-cli",
+      "_id": "@angular/cli@22.1.8",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/cli",
+      "_dependencies": {
+        "@angular-devkit/architect": "0.2201.8",
+        "@angular-devkit/core": "22.1.8",
+        "@angular-devkit/schematics": "22.1.8",
+        "@inquirer/prompts": "8.5.2",
+        "@listr2/prompt-adapter-inquirer": "4.2.5",
+        "@modelcontextprotocol/sdk": "1.30.0",
+        "@schematics/angular": "22.1.8",
+        "jsonc-parser": "3.3.1",
+        "listr2": "11.0.0",
+        "npm-package-arg": "14.0.0",
+        "parse5-html-rewriting-stream": "8.0.1",
+        "semver": "7.8.5",
+        "yargs": "18.1.0",
+        "zod": "4.4.3"
+      },
+      "devDependencies": {},
+      "peerDependencies": {}
+    },
+    "@angular/common": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/common",
+      "description": "Angular - commonly needed directives and services",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "locales": "locales",
+      "exports": {
+        "./locales/global/*": {
+          "default": "./locales/global/*.js"
+        },
+        "./locales/*": {
+          "types": "./locales/*.d.ts",
+          "default": "./locales/*.js"
+        },
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/common.d.ts",
+          "default": "./fesm2022/common.mjs"
+        },
+        "./http": {
+          "types": "./types/http.d.ts",
+          "default": "./fesm2022/http.mjs"
+        },
+        "./http/testing": {
+          "types": "./types/http-testing.d.ts",
+          "default": "./fesm2022/http-testing.mjs"
+        },
+        "./testing": {
+          "types": "./types/testing.d.ts",
+          "default": "./fesm2022/testing.mjs"
+        },
+        "./upgrade": {
+          "types": "./types/upgrade.d.ts",
+          "default": "./fesm2022/upgrade.mjs"
+        }
+      },
+      "peerDependencies": {
+        "@angular/core": "22.1.6",
+        "rxjs": "^6.5.3 || ^7.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/common"
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": [
+        "**/global/*.js",
+        "**/closure-locale.*"
+      ],
+      "module": "./fesm2022/common.mjs",
+      "typings": "./types/common.d.ts",
+      "type": "module",
+      "_id": "@angular/common@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/common",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      },
+      "devDependencies": {}
+    },
+    "@angular/compiler-cli": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/compiler-cli",
+      "description": "Angular - the compiler CLI for Node.js",
+      "typings": "index.d.ts",
+      "bin": {
+        "ngc": "bundles/src/bin/ngc.js",
+        "ng-xi18n": "bundles/src/bin/ng_xi18n.js"
+      },
+      "type": "module",
+      "exports": {
+        ".": {
+          "types": "./index.d.ts",
+          "default": "./bundles/index.js"
+        },
+        "./package.json": {
+          "default": "./package.json"
+        },
+        "./linker": {
+          "types": "./linker/index.d.ts",
+          "default": "./bundles/linker/index.js"
+        },
+        "./linker/babel": {
+          "types": "./linker/babel/index.d.ts",
+          "default": "./bundles/linker/babel/index.js"
+        },
+        "./private/*": {
+          "types": "./private/*.d.ts",
+          "default": "./bundles/private/*.js"
+        }
+      },
+      "devDependencies": {
+        "typescript": "6.0.3",
+        "@types/convert-source-map": "^2.0.0"
+      },
+      "peerDependencies": {
+        "@angular/compiler": "22.1.6",
+        "typescript": ">=6.0 <6.1"
+      },
+      "peerDependenciesMeta": {
+        "typescript": {
+          "optional": true
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/compiler-cli"
+      },
+      "keywords": [
+        "angular",
+        "compiler"
+      ],
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/angular/angular/issues"
+      },
+      "homepage": "https://github.com/angular/angular/tree/main/packages/compiler-cli",
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "_id": "@angular/compiler-cli@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/compiler-cli",
+      "_dependencies": {
+        "@babel/core": "8.0.1",
+        "@jridgewell/sourcemap-codec": "^1.4.14",
+        "reflect-metadata": "^0.2.0",
+        "chokidar": "^5.0.0",
+        "convert-source-map": "^1.5.1",
+        "semver": "^7.0.0",
+        "tslib": "^2.3.0",
+        "yargs": "^18.0.0"
+      }
+    },
+    "@angular/compiler": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/compiler",
+      "description": "Angular - the compiler library",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/compiler"
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": [
+        "./fesm2022/compiler.mjs"
+      ],
+      "module": "./fesm2022/compiler.mjs",
+      "typings": "./types/compiler.d.ts",
+      "type": "module",
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/compiler.d.ts",
+          "default": "./fesm2022/compiler.mjs"
+        }
+      },
+      "_id": "@angular/compiler@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/compiler",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      },
+      "devDependencies": {},
+      "peerDependencies": {}
+    },
+    "@angular/core": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/core",
+      "description": "Angular - the core framework",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "exports": {
+        "./schematics/*": {
+          "default": "./schematics/*.js"
+        },
+        "./event-dispatch-contract.min.js": {
+          "default": "./event-dispatch-contract.min.js"
+        },
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/core.d.ts",
+          "default": "./fesm2022/core.mjs"
+        },
+        "./primitives/di": {
+          "types": "./types/primitives-di.d.ts",
+          "default": "./fesm2022/primitives-di.mjs"
+        },
+        "./primitives/event-dispatch": {
+          "types": "./types/primitives-event-dispatch.d.ts",
+          "default": "./fesm2022/primitives-event-dispatch.mjs"
+        },
+        "./primitives/signals": {
+          "types": "./types/primitives-signals.d.ts",
+          "default": "./fesm2022/primitives-signals.mjs"
+        },
+        "./rxjs-interop": {
+          "types": "./types/rxjs-interop.d.ts",
+          "default": "./fesm2022/rxjs-interop.mjs"
+        },
+        "./testing": {
+          "types": "./types/testing.d.ts",
+          "default": "./fesm2022/testing.mjs"
+        }
+      },
+      "devDependencies": {
+        "@mcp-b/webmcp-polyfill": "^4.0.0",
+        "@mcp-b/webmcp-types": "^4.0.0"
+      },
+      "peerDependencies": {
+        "@angular/compiler": "22.1.6",
+        "rxjs": "^6.5.3 || ^7.4.0",
+        "zone.js": "~0.15.0 || ~0.16.0"
+      },
+      "peerDependenciesMeta": {
+        "@angular/compiler": {
+          "optional": true
+        },
+        "zone.js": {
+          "optional": true
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/core"
+      },
+      "ng-update": {
+        "migrations": "./schematics/migrations.json",
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "angular": {
+        "bestPractices": {
+          "format": "markdown",
+          "path": "./resources/best-practices.md"
+        }
+      },
+      "schematics": "./schematics/collection.json",
+      "sideEffects": false,
+      "module": "./fesm2022/core.mjs",
+      "typings": "./types/core.d.ts",
+      "type": "module",
+      "_id": "@angular/core@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/core",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      }
+    },
+    "@angular/forms": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/forms",
+      "description": "Angular - directives and services for creating forms",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "devDependencies": {
+        "@mcp-b/webmcp-polyfill": "^4.0.0",
+        "@mcp-b/webmcp-types": "^4.0.0"
+      },
+      "peerDependencies": {
+        "@angular/core": "22.1.6",
+        "@angular/common": "22.1.6",
+        "@angular/platform-browser": "22.1.6",
+        "rxjs": "^6.5.3 || ^7.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/forms"
+      },
+      "angular": {
+        "examples": {
+          "format": "sqlite",
+          "path": "./resources/code-examples.db"
+        }
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": false,
+      "module": "./fesm2022/forms.mjs",
+      "typings": "./types/forms.d.ts",
+      "type": "module",
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/forms.d.ts",
+          "default": "./fesm2022/forms.mjs"
+        },
+        "./signals": {
+          "types": "./types/signals.d.ts",
+          "default": "./fesm2022/signals.mjs"
+        },
+        "./signals/compat": {
+          "types": "./types/signals-compat.d.ts",
+          "default": "./fesm2022/signals-compat.mjs"
+        }
+      },
+      "_id": "@angular/forms@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/forms",
+      "_dependencies": {
+        "tslib": "^2.3.0",
+        "@standard-schema/spec": "^1.0.0",
+        "zod": "^4.0.10"
+      }
+    },
+    "@angular/localize": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/localize/-/localize-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/localize",
+      "description": "Angular - library for localizing messages",
+      "bin": {
+        "localize-translate": "tools/bundles/src/translate/cli.js",
+        "localize-extract": "tools/bundles/src/extract/cli.js",
+        "localize-migrate": "tools/bundles/src/migrate/cli.js"
+      },
+      "exports": {
+        "./tools": {
+          "types": "./tools/index.d.ts",
+          "default": "./tools/bundles/index.js"
+        },
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/localize.d.ts",
+          "default": "./fesm2022/localize.mjs"
+        },
+        "./init": {
+          "types": "./types/init.d.ts",
+          "default": "./fesm2022/init.mjs"
+        }
+      },
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git"
+      },
+      "schematics": "./schematics/collection.json",
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "ng-add": {
+        "save": "devDependencies"
+      },
+      "sideEffects": [
+        "./fesm2022/init.mjs"
+      ],
+      "peerDependencies": {
+        "@angular/compiler": "22.1.6",
+        "@angular/compiler-cli": "22.1.6"
+      },
+      "module": "./fesm2022/localize.mjs",
+      "typings": "./types/localize.d.ts",
+      "type": "module",
+      "_id": "@angular/localize@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/localize",
+      "_dependencies": {
+        "@babel/core": "8.0.1",
+        "tinyglobby": "^0.2.12",
+        "yargs": "^18.0.0"
+      },
+      "devDependencies": {}
+    },
+    "@angular/material": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/material/-/material-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/material",
+      "description": "Angular Material",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/components.git"
+      },
+      "keywords": [
+        "angular",
+        "material",
+        "material design",
+        "components"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/angular/components/issues"
+      },
+      "homepage": "https://github.com/angular/components#readme",
+      "exports": {
+        ".": {
+          "sass": "./_index.scss",
+          "types": "./types/material.d.ts",
+          "default": "./fesm2022/material.mjs"
+        },
+        "./theming": {
+          "sass": "./_theming.scss"
+        },
+        "./_theming": {
+          "sass": "./_theming.scss"
+        },
+        "./prebuilt-themes/indigo-pink.css": {
+          "style": "./prebuilt-themes/indigo-pink.css"
+        },
+        "./prebuilt-themes/deeppurple-amber.css": {
+          "style": "./prebuilt-themes/deeppurple-amber.css"
+        },
+        "./prebuilt-themes/pink-bluegrey.css": {
+          "style": "./prebuilt-themes/pink-bluegrey.css"
+        },
+        "./prebuilt-themes/purple-green.css": {
+          "style": "./prebuilt-themes/purple-green.css"
+        },
+        "./prebuilt-themes/azure-blue.css": {
+          "style": "./prebuilt-themes/azure-blue.css"
+        },
+        "./prebuilt-themes/rose-red.css": {
+          "style": "./prebuilt-themes/rose-red.css"
+        },
+        "./prebuilt-themes/cyan-orange.css": {
+          "style": "./prebuilt-themes/cyan-orange.css"
+        },
+        "./prebuilt-themes/magenta-violet.css": {
+          "style": "./prebuilt-themes/magenta-violet.css"
+        },
+        "./prebuilt-themes/*": {
+          "style": "./prebuilt-themes/*.css"
+        },
+        "./package.json": {
+          "default": "./package.json"
+        },
+        "./autocomplete": {
+          "types": "./types/autocomplete.d.ts",
+          "default": "./fesm2022/autocomplete.mjs"
+        },
+        "./autocomplete/testing": {
+          "types": "./types/autocomplete-testing.d.ts",
+          "default": "./fesm2022/autocomplete-testing.mjs"
+        },
+        "./badge": {
+          "types": "./types/badge.d.ts",
+          "default": "./fesm2022/badge.mjs"
+        },
+        "./badge/testing": {
+          "types": "./types/badge-testing.d.ts",
+          "default": "./fesm2022/badge-testing.mjs"
+        },
+        "./bottom-sheet": {
+          "types": "./types/bottom-sheet.d.ts",
+          "default": "./fesm2022/bottom-sheet.mjs"
+        },
+        "./bottom-sheet/testing": {
+          "types": "./types/bottom-sheet-testing.d.ts",
+          "default": "./fesm2022/bottom-sheet-testing.mjs"
+        },
+        "./button": {
+          "types": "./types/button.d.ts",
+          "default": "./fesm2022/button.mjs"
+        },
+        "./button-toggle": {
+          "types": "./types/button-toggle.d.ts",
+          "default": "./fesm2022/button-toggle.mjs"
+        },
+        "./button-toggle/testing": {
+          "types": "./types/button-toggle-testing.d.ts",
+          "default": "./fesm2022/button-toggle-testing.mjs"
+        },
+        "./button/testing": {
+          "types": "./types/button-testing.d.ts",
+          "default": "./fesm2022/button-testing.mjs"
+        },
+        "./card": {
+          "types": "./types/card.d.ts",
+          "default": "./fesm2022/card.mjs"
+        },
+        "./card/testing": {
+          "types": "./types/card-testing.d.ts",
+          "default": "./fesm2022/card-testing.mjs"
+        },
+        "./checkbox": {
+          "types": "./types/checkbox.d.ts",
+          "default": "./fesm2022/checkbox.mjs"
+        },
+        "./checkbox/testing": {
+          "types": "./types/checkbox-testing.d.ts",
+          "default": "./fesm2022/checkbox-testing.mjs"
+        },
+        "./chips": {
+          "types": "./types/chips.d.ts",
+          "default": "./fesm2022/chips.mjs"
+        },
+        "./chips/testing": {
+          "types": "./types/chips-testing.d.ts",
+          "default": "./fesm2022/chips-testing.mjs"
+        },
+        "./core": {
+          "types": "./types/core.d.ts",
+          "default": "./fesm2022/core.mjs"
+        },
+        "./core/testing": {
+          "types": "./types/core-testing.d.ts",
+          "default": "./fesm2022/core-testing.mjs"
+        },
+        "./datepicker": {
+          "types": "./types/datepicker.d.ts",
+          "default": "./fesm2022/datepicker.mjs"
+        },
+        "./datepicker/testing": {
+          "types": "./types/datepicker-testing.d.ts",
+          "default": "./fesm2022/datepicker-testing.mjs"
+        },
+        "./dialog": {
+          "types": "./types/dialog.d.ts",
+          "default": "./fesm2022/dialog.mjs"
+        },
+        "./dialog/testing": {
+          "types": "./types/dialog-testing.d.ts",
+          "default": "./fesm2022/dialog-testing.mjs"
+        },
+        "./divider": {
+          "types": "./types/divider.d.ts",
+          "default": "./fesm2022/divider.mjs"
+        },
+        "./divider/testing": {
+          "types": "./types/divider-testing.d.ts",
+          "default": "./fesm2022/divider-testing.mjs"
+        },
+        "./expansion": {
+          "types": "./types/expansion.d.ts",
+          "default": "./fesm2022/expansion.mjs"
+        },
+        "./expansion/testing": {
+          "types": "./types/expansion-testing.d.ts",
+          "default": "./fesm2022/expansion-testing.mjs"
+        },
+        "./form-field": {
+          "types": "./types/form-field.d.ts",
+          "default": "./fesm2022/form-field.mjs"
+        },
+        "./form-field/testing": {
+          "types": "./types/form-field-testing.d.ts",
+          "default": "./fesm2022/form-field-testing.mjs"
+        },
+        "./form-field/testing/control": {
+          "types": "./types/form-field-testing-control.d.ts",
+          "default": "./fesm2022/form-field-testing-control.mjs"
+        },
+        "./grid-list": {
+          "types": "./types/grid-list.d.ts",
+          "default": "./fesm2022/grid-list.mjs"
+        },
+        "./grid-list/testing": {
+          "types": "./types/grid-list-testing.d.ts",
+          "default": "./fesm2022/grid-list-testing.mjs"
+        },
+        "./icon": {
+          "types": "./types/icon.d.ts",
+          "default": "./fesm2022/icon.mjs"
+        },
+        "./icon/testing": {
+          "types": "./types/icon-testing.d.ts",
+          "default": "./fesm2022/icon-testing.mjs"
+        },
+        "./input": {
+          "types": "./types/input.d.ts",
+          "default": "./fesm2022/input.mjs"
+        },
+        "./input/testing": {
+          "types": "./types/input-testing.d.ts",
+          "default": "./fesm2022/input-testing.mjs"
+        },
+        "./list": {
+          "types": "./types/list.d.ts",
+          "default": "./fesm2022/list.mjs"
+        },
+        "./list/testing": {
+          "types": "./types/list-testing.d.ts",
+          "default": "./fesm2022/list-testing.mjs"
+        },
+        "./menu": {
+          "types": "./types/menu.d.ts",
+          "default": "./fesm2022/menu.mjs"
+        },
+        "./menu/testing": {
+          "types": "./types/menu-testing.d.ts",
+          "default": "./fesm2022/menu-testing.mjs"
+        },
+        "./paginator": {
+          "types": "./types/paginator.d.ts",
+          "default": "./fesm2022/paginator.mjs"
+        },
+        "./paginator/testing": {
+          "types": "./types/paginator-testing.d.ts",
+          "default": "./fesm2022/paginator-testing.mjs"
+        },
+        "./progress-bar": {
+          "types": "./types/progress-bar.d.ts",
+          "default": "./fesm2022/progress-bar.mjs"
+        },
+        "./progress-bar/testing": {
+          "types": "./types/progress-bar-testing.d.ts",
+          "default": "./fesm2022/progress-bar-testing.mjs"
+        },
+        "./progress-spinner": {
+          "types": "./types/progress-spinner.d.ts",
+          "default": "./fesm2022/progress-spinner.mjs"
+        },
+        "./progress-spinner/testing": {
+          "types": "./types/progress-spinner-testing.d.ts",
+          "default": "./fesm2022/progress-spinner-testing.mjs"
+        },
+        "./radio": {
+          "types": "./types/radio.d.ts",
+          "default": "./fesm2022/radio.mjs"
+        },
+        "./radio/testing": {
+          "types": "./types/radio-testing.d.ts",
+          "default": "./fesm2022/radio-testing.mjs"
+        },
+        "./select": {
+          "types": "./types/select.d.ts",
+          "default": "./fesm2022/select.mjs"
+        },
+        "./select/testing": {
+          "types": "./types/select-testing.d.ts",
+          "default": "./fesm2022/select-testing.mjs"
+        },
+        "./sidenav": {
+          "types": "./types/sidenav.d.ts",
+          "default": "./fesm2022/sidenav.mjs"
+        },
+        "./sidenav/testing": {
+          "types": "./types/sidenav-testing.d.ts",
+          "default": "./fesm2022/sidenav-testing.mjs"
+        },
+        "./slide-toggle": {
+          "types": "./types/slide-toggle.d.ts",
+          "default": "./fesm2022/slide-toggle.mjs"
+        },
+        "./slide-toggle/testing": {
+          "types": "./types/slide-toggle-testing.d.ts",
+          "default": "./fesm2022/slide-toggle-testing.mjs"
+        },
+        "./slider": {
+          "types": "./types/slider.d.ts",
+          "default": "./fesm2022/slider.mjs"
+        },
+        "./slider/testing": {
+          "types": "./types/slider-testing.d.ts",
+          "default": "./fesm2022/slider-testing.mjs"
+        },
+        "./snack-bar": {
+          "types": "./types/snack-bar.d.ts",
+          "default": "./fesm2022/snack-bar.mjs"
+        },
+        "./snack-bar/testing": {
+          "types": "./types/snack-bar-testing.d.ts",
+          "default": "./fesm2022/snack-bar-testing.mjs"
+        },
+        "./sort": {
+          "types": "./types/sort.d.ts",
+          "default": "./fesm2022/sort.mjs"
+        },
+        "./sort/testing": {
+          "types": "./types/sort-testing.d.ts",
+          "default": "./fesm2022/sort-testing.mjs"
+        },
+        "./stepper": {
+          "types": "./types/stepper.d.ts",
+          "default": "./fesm2022/stepper.mjs"
+        },
+        "./stepper/testing": {
+          "types": "./types/stepper-testing.d.ts",
+          "default": "./fesm2022/stepper-testing.mjs"
+        },
+        "./table": {
+          "types": "./types/table.d.ts",
+          "default": "./fesm2022/table.mjs"
+        },
+        "./table/testing": {
+          "types": "./types/table-testing.d.ts",
+          "default": "./fesm2022/table-testing.mjs"
+        },
+        "./tabs": {
+          "types": "./types/tabs.d.ts",
+          "default": "./fesm2022/tabs.mjs"
+        },
+        "./tabs/testing": {
+          "types": "./types/tabs-testing.d.ts",
+          "default": "./fesm2022/tabs-testing.mjs"
+        },
+        "./timepicker": {
+          "types": "./types/timepicker.d.ts",
+          "default": "./fesm2022/timepicker.mjs"
+        },
+        "./timepicker/testing": {
+          "types": "./types/timepicker-testing.d.ts",
+          "default": "./fesm2022/timepicker-testing.mjs"
+        },
+        "./toolbar": {
+          "types": "./types/toolbar.d.ts",
+          "default": "./fesm2022/toolbar.mjs"
+        },
+        "./toolbar/testing": {
+          "types": "./types/toolbar-testing.d.ts",
+          "default": "./fesm2022/toolbar-testing.mjs"
+        },
+        "./tooltip": {
+          "types": "./types/tooltip.d.ts",
+          "default": "./fesm2022/tooltip.mjs"
+        },
+        "./tooltip/testing": {
+          "types": "./types/tooltip-testing.d.ts",
+          "default": "./fesm2022/tooltip-testing.mjs"
+        },
+        "./tree": {
+          "types": "./types/tree.d.ts",
+          "default": "./fesm2022/tree.mjs"
+        },
+        "./tree/testing": {
+          "types": "./types/tree-testing.d.ts",
+          "default": "./fesm2022/tree-testing.mjs"
+        }
+      },
+      "peerDependencies": {
+        "@angular/cdk": "22.1.6",
+        "@angular/core": "^22.0.0 || ^23.0.0",
+        "@angular/common": "^22.0.0 || ^23.0.0",
+        "@angular/forms": "^22.0.0 || ^23.0.0",
+        "@angular/platform-browser": "^22.0.0 || ^23.0.0",
+        "rxjs": "^6.5.3 || ^7.4.0"
+      },
+      "devDependencies": {
+        "@angular/cdk": "workspace:*"
+      },
+      "schematics": "./schematics/collection.json",
+      "ng-update": {
+        "migrations": "./schematics/migration.json",
+        "packageGroup": [
+          "@angular/material",
+          "@angular/aria",
+          "@angular/cdk",
+          "@angular/cdk-experimental",
+          "@angular/material-experimental",
+          "@angular/material-luxon-adapter",
+          "@angular/material-moment-adapter",
+          "@angular/material-date-fns-adapter"
+        ]
+      },
+      "sideEffects": false,
+      "module": "./fesm2022/material.mjs",
+      "typings": "./types/material.d.ts",
+      "type": "module",
+      "_id": "@angular/material@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/material",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      }
+    },
+    "@angular/platform-browser-dynamic": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/platform-browser-dynamic",
+      "description": "Angular - library for using Angular in a web browser with JIT compilation",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "peerDependencies": {
+        "@angular/core": "22.1.6",
+        "@angular/common": "22.1.6",
+        "@angular/compiler": "22.1.6",
+        "@angular/platform-browser": "22.1.6"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/platform-browser-dynamic"
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": [
+        "./fesm2022/platform-browser-dynamic.mjs",
+        "./fesm2022/testing.mjs"
+      ],
+      "module": "./fesm2022/platform-browser-dynamic.mjs",
+      "typings": "./types/platform-browser-dynamic.d.ts",
+      "type": "module",
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/platform-browser-dynamic.d.ts",
+          "default": "./fesm2022/platform-browser-dynamic.mjs"
+        },
+        "./testing": {
+          "types": "./types/testing.d.ts",
+          "default": "./fesm2022/testing.mjs"
+        }
+      },
+      "_id": "@angular/platform-browser-dynamic@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/platform-browser-dynamic",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      },
+      "devDependencies": {}
+    },
+    "@angular/platform-browser": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/platform-browser",
+      "description": "Angular - library for using Angular in a web browser",
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "peerDependencies": {
+        "@angular/animations": "22.1.6",
+        "@angular/core": "22.1.6",
+        "@angular/common": "22.1.6"
+      },
+      "peerDependenciesMeta": {
+        "@angular/animations": {
+          "optional": true
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular/angular.git",
+        "directory": "packages/platform-browser"
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": false,
+      "module": "./fesm2022/platform-browser.mjs",
+      "typings": "./types/platform-browser.d.ts",
+      "type": "module",
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/platform-browser.d.ts",
+          "default": "./fesm2022/platform-browser.mjs"
+        },
+        "./animations": {
+          "types": "./types/animations.d.ts",
+          "default": "./fesm2022/animations.mjs"
+        },
+        "./animations/async": {
+          "types": "./types/animations-async.d.ts",
+          "default": "./fesm2022/animations-async.mjs"
+        },
+        "./testing": {
+          "types": "./types/testing.d.ts",
+          "default": "./fesm2022/testing.mjs"
+        }
+      },
+      "_id": "@angular/platform-browser@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/platform-browser",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      },
+      "devDependencies": {}
+    },
+    "@angular/router": {
+      "version": "22.1.6",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-22.1.6.tgz",
+      "overridden": false,
+      "name": "@angular/router",
+      "description": "Angular - the routing library",
+      "keywords": [
+        "angular",
+        "router"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular/angular.git",
+        "directory": "packages/router"
+      },
+      "author": "angular",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/angular/angular/issues"
+      },
+      "homepage": "https://github.com/angular/angular/tree/main/packages/router",
+      "devDependencies": {
+        "@types/dom-navigation": "^1.0.5"
+      },
+      "peerDependencies": {
+        "@angular/core": "22.1.6",
+        "@angular/common": "22.1.6",
+        "@angular/platform-browser": "22.1.6",
+        "rxjs": "^6.5.3 || ^7.4.0"
+      },
+      "ng-update": {
+        "packageGroup": [
+          "@angular/core",
+          "@angular/bazel",
+          "@angular/common",
+          "@angular/compiler",
+          "@angular/compiler-cli",
+          "@angular/animations",
+          "@angular/elements",
+          "@angular/platform-browser",
+          "@angular/platform-browser-dynamic",
+          "@angular/forms",
+          "@angular/platform-server",
+          "@angular/upgrade",
+          "@angular/router",
+          "@angular/language-service",
+          "@angular/localize",
+          "@angular/service-worker"
+        ]
+      },
+      "sideEffects": false,
+      "module": "./fesm2022/router.mjs",
+      "typings": "./types/router.d.ts",
+      "type": "module",
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./types/router.d.ts",
+          "default": "./fesm2022/router.mjs"
+        },
+        "./testing": {
+          "types": "./types/testing.d.ts",
+          "default": "./fesm2022/testing.mjs"
+        },
+        "./upgrade": {
+          "types": "./types/upgrade.d.ts",
+          "default": "./fesm2022/upgrade.mjs"
+        }
+      },
+      "_id": "@angular/router@22.1.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@angular/router",
+      "_dependencies": {
+        "tslib": "^2.3.0"
+      }
+    },
+    "@eslint/js": {
+      "version": "10.0.1",
+      "resolved": "https://registry.npmjs.org/@eslint/js/-/js-10.0.1.tgz",
+      "overridden": false,
+      "name": "@eslint/js",
+      "description": "ESLint JavaScript language implementation",
+      "funding": {
+        "url": "https://eslint.org/donate"
+      },
+      "main": "./src/index.js",
+      "types": "./types/index.d.ts",
+      "scripts": {
+        "test:types": "tsc -p tests/types/tsconfig.json"
+      },
+      "files": [
+        "LICENSE",
+        "README.md",
+        "src",
+        "types"
+      ],
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/eslint/eslint.git",
+        "directory": "packages/js"
+      },
+      "homepage": "https://eslint.org",
+      "bugs": "https://github.com/eslint/eslint/issues/",
+      "keywords": [
+        "javascript",
+        "eslint-plugin",
+        "eslint"
+      ],
+      "license": "MIT",
+      "peerDependencies": {
+        "eslint": "^10.0.0"
+      },
+      "peerDependenciesMeta": {
+        "eslint": {
+          "optional": true
+        }
+      },
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "_id": "@eslint/js@10.0.1",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@eslint/js",
+      "_dependencies": {},
+      "devDependencies": {}
+    },
+    "@softarc/native-federation-node": {
+      "version": "3.5.6",
+      "resolved": "https://registry.npmjs.org/@softarc/native-federation-node/-/native-federation-node-3.5.6.tgz",
+      "overridden": false,
+      "name": "@softarc/native-federation-node",
+      "license": "MIT",
+      "types": "./src/index.d.ts",
+      "module": "./src/index.js",
+      "type": "module",
+      "main": "./src/index.js",
+      "_id": "@softarc/native-federation-node@3.5.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@softarc/native-federation-node",
+      "_dependencies": {
+        "@softarc/native-federation-runtime": "~3.5.4",
+        "tslib": "^2.8.1"
+      },
+      "devDependencies": {},
+      "peerDependencies": {}
+    },
+    "@types/jest": {
+      "version": "30.0.0",
+      "resolved": "https://registry.npmjs.org/@types/jest/-/jest-30.0.0.tgz",
+      "overridden": false,
+      "name": "@types/jest",
+      "description": "TypeScript definitions for jest",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jest",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Asana (https://asana.com)\n//                 Ivo Stratev",
+          "githubUsername": "NoHomey",
+          "url": "https://github.com/NoHomey"
+        },
+        {
+          "name": "jwbay",
+          "githubUsername": "jwbay",
+          "url": "https://github.com/jwbay"
+        },
+        {
+          "name": "Alexey Svetliakov",
+          "githubUsername": "asvetliakov",
+          "url": "https://github.com/asvetliakov"
+        },
+        {
+          "name": "Alex Jover Morales",
+          "githubUsername": "alexjoverm",
+          "url": "https://github.com/alexjoverm"
+        },
+        {
+          "name": "Allan Lukwago",
+          "githubUsername": "epicallan",
+          "url": "https://github.com/epicallan"
+        },
+        {
+          "name": "Ika",
+          "githubUsername": "ikatyang",
+          "url": "https://github.com/ikatyang"
+        },
+        {
+          "name": "Waseem Dahman",
+          "githubUsername": "wsmd",
+          "url": "https://github.com/wsmd"
+        },
+        {
+          "name": "Jamie Mason",
+          "githubUsername": "JamieMason",
+          "url": "https://github.com/JamieMason"
+        },
+        {
+          "name": "Douglas Duteil",
+          "githubUsername": "douglasduteil",
+          "url": "https://github.com/douglasduteil"
+        },
+        {
+          "name": "Ahn",
+          "githubUsername": "ahnpnl",
+          "url": "https://github.com/ahnpnl"
+        },
+        {
+          "name": "Jeff Lau",
+          "githubUsername": "UselessPickles",
+          "url": "https://github.com/UselessPickles"
+        },
+        {
+          "name": "Andrew Makarov",
+          "githubUsername": "r3nya",
+          "url": "https://github.com/r3nya"
+        },
+        {
+          "name": "Martin Hochel",
+          "githubUsername": "hotell",
+          "url": "https://github.com/hotell"
+        },
+        {
+          "name": "Sebastian Sebald",
+          "githubUsername": "sebald",
+          "url": "https://github.com/sebald"
+        },
+        {
+          "name": "Andy",
+          "githubUsername": "andys8",
+          "url": "https://github.com/andys8"
+        },
+        {
+          "name": "Antoine Brault",
+          "githubUsername": "antoinebrault",
+          "url": "https://github.com/antoinebrault"
+        },
+        {
+          "name": "Gregor Stamać",
+          "githubUsername": "gstamac",
+          "url": "https://github.com/gstamac"
+        },
+        {
+          "name": "ExE Boss",
+          "githubUsername": "ExE-Boss",
+          "url": "https://github.com/ExE-Boss"
+        },
+        {
+          "name": "Alex Bolenok",
+          "githubUsername": "quassnoi",
+          "url": "https://github.com/quassnoi"
+        },
+        {
+          "name": "Mario Beltrán Alarcón",
+          "githubUsername": "Belco90",
+          "url": "https://github.com/Belco90"
+        },
+        {
+          "name": "Tony Hallett",
+          "githubUsername": "tonyhallett",
+          "url": "https://github.com/tonyhallett"
+        },
+        {
+          "name": "Jason Yu",
+          "githubUsername": "ycmjason",
+          "url": "https://github.com/ycmjason"
+        },
+        {
+          "name": "Pawel Fajfer",
+          "githubUsername": "pawfa",
+          "url": "https://github.com/pawfa"
+        },
+        {
+          "name": "Alexandre Germain",
+          "githubUsername": "gerkindev",
+          "url": "https://github.com/gerkindev"
+        },
+        {
+          "name": "Adam Jones",
+          "githubUsername": "domdomegg",
+          "url": "https://github.com/domdomegg"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/jest"
+      },
+      "scripts": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "0fa4b32f7923c817b941e83858439e9ac13f522d9363e704f6140143388fc42e",
+      "typeScriptVersion": "5.1",
+      "_id": "@types/jest@30.0.0",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/@types/jest",
+      "_dependencies": {
+        "expect": "^30.0.0",
+        "pretty-format": "^30.0.0"
+      },
+      "devDependencies": {}
+    },
+    "angular-eslint": {
+      "version": "22.5.0",
+      "resolved": "https://registry.npmjs.org/angular-eslint/-/angular-eslint-22.5.0.tgz",
+      "overridden": false,
+      "name": "angular-eslint",
+      "description": "The tooling which enables ESLint to work with Angular projects",
+      "license": "MIT",
+      "main": "dist/index.js",
+      "types": "dist/index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/angular-eslint/angular-eslint.git",
+        "directory": "packages/angular-eslint"
+      },
+      "bugs": "https://github.com/angular-eslint/angular-eslint/issues",
+      "files": [
+        "dist",
+        "!**/*.tsbuildinfo",
+        "package.json",
+        "README.md",
+        "LICENSE"
+      ],
+      "peerDependencies": {
+        "eslint": "^9.0.0 || ^10.0.0",
+        "typescript": "*",
+        "typescript-eslint": "^8.0.0"
+      },
+      "ng-update": {
+        "packageGroupName": "angular-eslint",
+        "migrations": "@angular-eslint/schematics/dist/migrations.json",
+        "packageGroup": [
+          "@angular-eslint/builder",
+          "@angular-eslint/bundled-angular-compiler",
+          "@angular-eslint/eslint-plugin",
+          "@angular-eslint/eslint-plugin-template",
+          "@angular-eslint/schematics",
+          "@angular-eslint/template-parser",
+          "@angular-eslint/test-utils",
+          "@angular-eslint/utils",
+          "angular-eslint"
+        ]
+      },
+      "ng-add": {
+        "save": "devDependencies"
+      },
+      "schematics": "@angular-eslint/schematics/dist/collection.json",
+      "_id": "angular-eslint@22.5.0",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/angular-eslint",
+      "_dependencies": {
+        "@angular-devkit/core": ">= 22.0.0 < 23.0.0",
+        "@angular-devkit/schematics": ">= 22.0.0 < 23.0.0",
+        "@angular-eslint/builder": "22.5.0",
+        "@angular-eslint/eslint-plugin": "22.5.0",
+        "@angular-eslint/eslint-plugin-template": "22.5.0",
+        "@angular-eslint/schematics": "22.5.0",
+        "@angular-eslint/template-parser": "22.5.0",
+        "@typescript-eslint/types": "^8.0.0",
+        "@typescript-eslint/utils": "^8.0.0"
+      },
+      "devDependencies": {}
+    },
+    "es-module-shims": {
+      "version": "2.8.4",
+      "resolved": "https://registry.npmjs.org/es-module-shims/-/es-module-shims-2.8.4.tgz",
+      "overridden": false,
+      "name": "es-module-shims",
+      "description": "Shims for the latest ES module features",
+      "main": "dist/es-module-shims.js",
+      "exports": {
+        ".": {
+          "types": "./index.d.ts",
+          "default": "./dist/es-module-shims.js"
+        },
+        "./debug": {
+          "types": "./index.d.ts",
+          "default": "./dist/es-module-shims.debug.js"
+        },
+        "./wasm": {
+          "types": "./index.d.ts",
+          "default": "./dist/es-module-shims.wasm.js"
+        },
+        "./typescript-transform": "./dist/es-module-shims-typescript.js"
+      },
+      "types": "index.d.ts",
+      "type": "module",
+      "files": [
+        "dist/es-module-shims.debug.js",
+        "dist/es-module-shims.js",
+        "dist/es-module-shims.wasm.js",
+        "dist/es-module-shims-typescript.js",
+        "index.d.ts"
+      ],
+      "author": "Guy Bedford",
+      "license": "MIT",
+      "devDependencies": {
+        "@rollup/plugin-replace": "^2.4.2",
+        "amaro": "0.5.3",
+        "chomp": "^0.2.23",
+        "es-module-lexer": "2.3.1",
+        "kleur": "^4.1.4",
+        "mime-types": "^2.1.33",
+        "mocha": "^9.1.1",
+        "npm-run-all": "^4.1.5",
+        "open": "^8.0.8",
+        "preact": "^10.5.14",
+        "prettier": "^3.4.2",
+        "pretty-ms": "^3.2.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.58.0",
+        "tachometer": "^0.5.10",
+        "terser": "^5.10.0"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "build": "chomp build",
+        "test": "chomp test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guybedford/es-module-shims.git"
+      },
+      "bugs": {
+        "url": "https://github.com/guybedford/es-module-shims/issues"
+      },
+      "homepage": "https://github.com/guybedford/es-module-shims#readme",
+      "_id": "es-module-shims@2.8.4",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/es-module-shims",
+      "_dependencies": {},
+      "peerDependencies": {}
+    },
+    "eslint-config-prettier": {
+      "version": "10.1.8",
+      "resolved": "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-10.1.8.tgz",
+      "overridden": false,
+      "name": "eslint-config-prettier",
+      "type": "commonjs",
+      "description": "Turns off all rules that are unnecessary or might conflict with Prettier.",
+      "repository": "prettier/eslint-config-prettier",
+      "homepage": "https://github.com/prettier/eslint-config-prettier#readme",
+      "author": "Simon Lydell",
+      "maintainers": [
+        "JounQin (https://www.1stG.me) <admin@1stg.me>"
+      ],
+      "funding": {
+        "url": "https://opencollective.com/eslint-config-prettier"
+      },
+      "license": "MIT",
+      "bin": {
+        "eslint-config-prettier": "bin/cli.js"
+      },
+      "main": "index.js",
+      "types": "index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./index.d.ts",
+          "default": "./index.js"
+        },
+        "./flat": {
+          "types": "./flat.d.ts",
+          "default": "./flat.js"
+        },
+        "./prettier": {
+          "types": "./prettier.d.ts",
+          "default": "./prettier.js"
+        },
+        "./package.json": "./package.json"
+      },
+      "files": [
+        "bin",
+        "flat.d.ts",
+        "flat.js",
+        "index.d.ts",
+        "index.js",
+        "prettier.d.ts",
+        "prettier.js"
+      ],
+      "keywords": [
+        "eslint",
+        "eslintconfig",
+        "eslint-config",
+        "eslint-prettier",
+        "prettier"
+      ],
+      "peerDependencies": {
+        "eslint": ">=7.0.0"
+      },
+      "_id": "eslint-config-prettier@10.1.8",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/eslint-config-prettier",
+      "_dependencies": {},
+      "devDependencies": {}
+    },
+    "eslint": {
+      "version": "10.10.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.10.0.tgz",
+      "overridden": false,
+      "name": "eslint",
+      "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
+      "description": "An AST-based pattern checker for JavaScript.",
+      "type": "commonjs",
+      "bin": {
+        "eslint": "bin/eslint.js"
+      },
+      "main": "./lib/api.js",
+      "types": "./lib/types/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./lib/types/index.d.ts",
+          "default": "./lib/api.js"
+        },
+        "./config": {
+          "types": "./lib/types/config-api.d.ts",
+          "default": "./lib/config-api.js"
+        },
+        "./package.json": "./package.json",
+        "./use-at-your-own-risk": {
+          "types": "./lib/types/use-at-your-own-risk.d.ts",
+          "default": "./lib/unsupported-api.js"
+        },
+        "./rules": {
+          "types": "./lib/types/rules.d.ts"
+        },
+        "./universal": {
+          "types": "./lib/types/universal.d.ts",
+          "default": "./lib/universal.js"
+        }
+      },
+      "typesVersions": {
+        "*": {
+          "use-at-your-own-risk": [
+            "./lib/types/use-at-your-own-risk.d.ts"
+          ],
+          "rules": [
+            "./lib/types/rules.d.ts"
+          ],
+          "universal": [
+            "./lib/types/universal.d.ts"
+          ],
+          "config": [
+            "./lib/types/config-api.d.ts"
+          ]
+        }
+      },
+      "scripts": {
+        "build:docs:update-links": "node tools/fetch-docs-links.js",
+        "build:site": "node Makefile.js gensite",
+        "build:webpack": "node Makefile.js webpack",
+        "build:readme": "node tools/update-readme.js",
+        "build:rules-index": "node Makefile.js generateRuleIndexPage",
+        "fmt": "prettier --write .",
+        "fmt:check": "prettier --check .",
+        "lint": "node Makefile.js lint",
+        "lint:docs:js": "node Makefile.js lintDocsJS",
+        "lint:docs:rule-examples": "node Makefile.js checkRuleExamples",
+        "lint:unused": "knip",
+        "lint:fix": "node Makefile.js lint -- fix",
+        "lint:fix:docs:js": "node Makefile.js lintDocsJS -- fix",
+        "lint:rule-types": "node tools/update-rule-type-headers.js --check",
+        "lint:types": "attw --pack",
+        "release:generate:alpha": "node Makefile.js generatePrerelease -- alpha",
+        "release:generate:beta": "node Makefile.js generatePrerelease -- beta",
+        "release:generate:latest": "node Makefile.js generateRelease -- latest",
+        "release:generate:maintenance": "node Makefile.js generateRelease -- maintenance",
+        "release:generate:rc": "node Makefile.js generatePrerelease -- rc",
+        "release:publish": "node Makefile.js publishRelease",
+        "test": "node Makefile.js test",
+        "test:browser": "node Makefile.js cypress",
+        "test:cli": "mocha",
+        "test:ecosystem": "node tools/test-ecosystem/index.mjs",
+        "test:ecosystem:update": "node tools/test-ecosystem/update.mjs",
+        "test:emfile": "node tools/check-emfile-handling.js",
+        "test:fuzz": "node Makefile.js fuzz",
+        "test:performance": "node Makefile.js perf",
+        "test:pnpm": "cd tests/pnpm && node check.js && pnpm install && pnpm exec tsc",
+        "test:types": "tsc -p tests/lib/types/tsconfig.json && npm run test:types --workspaces --if-present",
+        "test:types:5.3": "npx -p typescript@5.3 -y -- tsc -p tsconfig.types-legacy.json",
+        "test:types:5.x": "npx -p typescript@5.x -y -- tsc -p tsconfig.types.json",
+        "test:types:7.x": "npx -p @typescript/native-preview@latest -y -- tsgo -p tsconfig.types.json",
+        "test:types:all": "npm run test:types && npm run test:types:5.3 && npm run test:types:5.x && npm run test:types:7.x"
+      },
+      "allowScripts": {
+        "core-js": false,
+        "cypress": false,
+        "re2": true,
+        "yorkie": true
+      },
+      "workspaces": [
+        "packages/*"
+      ],
+      "gitHooks": {
+        "pre-commit": "lint-staged"
+      },
+      "lint-staged": {
+        "*.{js,json,jsonc,json5,yml,yaml}": [
+          "eslint --fix",
+          "prettier --write"
+        ],
+        "docs/src/**/*.md": [
+          "markdownlint-cli2 --fix",
+          "prettier --write"
+        ],
+        "!({{*.,**/*.}{js,json,jsonc,json5,yml,yaml},docs/src/**/*.md})": "prettier --write --ignore-unknown",
+        "lib/rules/*.js": [
+          "node tools/update-eslint-all.js",
+          "node tools/update-eslint-recommended.js",
+          "node tools/update-rule-type-headers.js",
+          "git add packages/js/src/configs/*.js lib/types/rules.d.ts"
+        ],
+        "docs/src/rules/*.md": [
+          "node tools/check-rule-examples.js",
+          "node tools/fetch-docs-links.js",
+          "git add docs/src/_data/further_reading_links.json"
+        ],
+        "docs/**/*.svg": "npx -y svgo -r --multipass"
+      },
+      "files": [
+        "LICENSE",
+        "README.md",
+        "bin",
+        "conf",
+        "lib",
+        "messages"
+      ],
+      "repository": "eslint/eslint",
+      "funding": {
+        "url": "https://eslint.org/donate"
+      },
+      "homepage": "https://eslint.org",
+      "bugs": "https://github.com/eslint/eslint/issues/",
+      "devDependencies": {
+        "@arethetypeswrong/cli": "^0.18.3",
+        "@babel/core": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@cypress/webpack-preprocessor": "^6.0.2",
+        "@eslint/eslintrc": "^3.3.7",
+        "@eslint/json": "^2.1.0",
+        "@types/esquery": "^1.5.4",
+        "@types/node": "^22.13.14",
+        "@typescript-eslint/parser": "^8.58.2",
+        "babel-loader": "^8.0.5",
+        "c8": "^11.0.0",
+        "chai": "^4.0.1",
+        "cheerio": "^0.22.0",
+        "common-tags": "^1.8.0",
+        "core-js": "^3.1.3",
+        "cypress": "^14.1.0",
+        "ejs": "^3.0.2",
+        "eslint": "file:.",
+        "eslint-config-eslint": "file:packages/eslint-config-eslint",
+        "eslint-plugin-eslint-plugin": "^7.3.2",
+        "eslint-plugin-expect-type": "^0.6.0",
+        "eslint-plugin-yml": "^1.14.0",
+        "eslint-release": "^3.3.0",
+        "eslint-rule-extender": "^0.0.1",
+        "eslump": "^3.0.0",
+        "esprima": "^4.0.1",
+        "fs-teardown": "^0.1.3",
+        "glob": "^10.0.0",
+        "globals": "^16.2.0",
+        "got": "^11.8.3",
+        "gray-matter": "^4.0.3",
+        "jiti": "^2.6.1",
+        "knip": "^6.13.1",
+        "lint-staged": "^11.0.0",
+        "markdown-it": "^14.2.0",
+        "markdown-it-container": "^4.0.0",
+        "markdownlint-cli2": "^0.22.0",
+        "marked": "^4.0.8",
+        "metascraper": "^5.25.7",
+        "metascraper-description": "^5.25.7",
+        "metascraper-image": "^5.29.3",
+        "metascraper-logo": "^5.25.7",
+        "metascraper-logo-favicon": "^5.25.7",
+        "metascraper-title": "^5.25.7",
+        "mocha": "^11.7.1",
+        "node-polyfill-webpack-plugin": "^1.0.3",
+        "npm-license": "^0.3.3",
+        "prettier": "3.9.6",
+        "progress": "^2.0.3",
+        "proxyquire": "^2.0.1",
+        "regenerator-runtime": "^0.14.0",
+        "semver": "^7.5.3",
+        "shelljs": "^0.10.0",
+        "sinon": "^11.0.0",
+        "typescript": "^6.0.3",
+        "webpack": "^5.109.2",
+        "webpack-cli": "^4.5.0",
+        "yorkie": "^2.0.0"
+      },
+      "peerDependencies": {
+        "jiti": "*"
+      },
+      "peerDependenciesMeta": {
+        "jiti": {
+          "optional": true
+        }
+      },
+      "keywords": [
+        "ast",
+        "lint",
+        "javascript",
+        "ecmascript",
+        "espree"
+      ],
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || ^22.13.0 || >=24"
+      },
+      "_id": "eslint@10.10.0",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/eslint",
+      "_dependencies": {
+        "@eslint-community/eslint-utils": "^4.8.0",
+        "@eslint-community/regexpp": "^4.12.2",
+        "@eslint/config-array": "^0.23.5",
+        "@eslint/config-helpers": "^0.7.0",
+        "@eslint/core": "^1.2.1",
+        "@eslint/plugin-kit": "^0.7.3",
+        "@humanfs/node": "^0.16.6",
+        "@humanwhocodes/module-importer": "^1.0.1",
+        "@humanwhocodes/retry": "^0.4.2",
+        "@types/estree": "^1.0.6",
+        "ajv": "^6.14.0",
+        "cross-spawn": "^7.0.6",
+        "debug": "^4.3.2",
+        "escape-string-regexp": "^4.0.0",
+        "eslint-scope": "^9.1.2",
+        "eslint-visitor-keys": "^5.0.1",
+        "espree": "^11.2.0",
+        "esquery": "^1.7.0",
+        "esutils": "^2.0.2",
+        "fast-deep-equal": "^3.1.3",
+        "file-entry-cache": "11.1.5 || >11.1.6 <12",
+        "find-up": "^5.0.0",
+        "glob-parent": "^6.0.2",
+        "ignore": "^5.2.0",
+        "imurmurhash": "^0.1.4",
+        "is-glob": "^4.0.0",
+        "json-stable-stringify-without-jsonify": "^1.0.1",
+        "minimatch": "^10.2.5",
+        "natural-compare": "^1.4.0",
+        "optionator": "^0.9.3"
+      }
+    },
+    "jest-environment-jsdom": {
+      "version": "30.5.1",
+      "resolved": "https://registry.npmjs.org/jest-environment-jsdom/-/jest-environment-jsdom-30.5.1.tgz",
+      "overridden": false,
+      "name": "jest-environment-jsdom",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jestjs/jest.git",
+        "directory": "packages/jest-environment-jsdom"
+      },
+      "license": "MIT",
+      "main": "./build/index.js",
+      "types": "./build/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./build/index.d.ts",
+          "require": "./build/index.js",
+          "import": "./build/index.mjs",
+          "default": "./build/index.js"
+        },
+        "./package.json": "./package.json"
+      },
+      "devDependencies": {
+        "@jest/test-utils": "30.5.1"
+      },
+      "peerDependencies": {
+        "canvas": "^3.0.0"
+      },
+      "peerDependenciesMeta": {
+        "canvas": {
+          "optional": true
+        }
+      },
+      "engines": {
+        "node": "^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "gitHead": "9ab14feccd6c15fec1334dbcb03a53a079d153d3",
+      "_id": "jest-environment-jsdom@30.5.1",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/jest-environment-jsdom",
+      "_dependencies": {
+        "@jest/environment": "30.5.1",
+        "@jest/environment-jsdom-abstract": "30.5.1",
+        "@types/jsdom": "^21.1.7",
+        "jsdom": "^26.1.0"
+      }
+    },
+    "jest-preset-angular": {
+      "version": "17.0.0",
+      "resolved": "https://registry.npmjs.org/jest-preset-angular/-/jest-preset-angular-17.0.0.tgz",
+      "overridden": false,
+      "name": "jest-preset-angular",
+      "description": "Jest preset configuration for Angular projects",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.11.1 || >=22.0.0"
+      },
+      "main": "build/index.js",
+      "typings": "build/index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thymikee/jest-preset-angular.git"
+      },
+      "bugs": {
+        "url": "https://github.com/thymikee/jest-preset-angular/issues"
+      },
+      "homepage": "https://thymikee.github.io/jest-preset-angular",
+      "author": "Michał Pierzchała <thymikee@gmail.com>",
+      "contributors": [
+        "Ahn <anhpnnd@gmail.com> (https://github.com/ahnpnl)",
+        "Thomas <thomas@wtho.de> (https://github.com/wtho)"
+      ],
+      "keywords": [
+        "jest",
+        "typescript",
+        "angular",
+        "testing"
+      ],
+      "scripts": {
+        "build-transformers-bundle": "esbuild --bundle --minify --target=es6 src/transformers/jit_transform.d.ts --platform=node --external:typescript --outfile=./src/transformers/jit_transform.js --format=cjs --define:import.meta.url=import_meta_url --inject:./src/transformers/esm_interop_inject.cjs && cp src/transformers/jit_transform.js build/transformers/jit_transform.js",
+        "build": "tsc -p tsconfig.build.json && yarn build-transformers-bundle",
+        "lint": "eslint .",
+        "lint-fix": "eslint --fix .",
+        "lint-prettier": "prettier \"**/*.{yml,yaml,md}\" --write",
+        "lint-prettier-ci": "prettier \"**/*.{yml,yaml,md}\" --check",
+        "test": "yarn build && jest",
+        "test-e2e": "yarn build && yarn test-cjs && yarn test-esm",
+        "test-cjs": "jest -c=jest-cjs.config.ts --no-cache",
+        "test-esm": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js -c=jest-esm.config.ts --no-cache",
+        "test-examples": "tsx scripts/test-examples.ts",
+        "test-perf": "jest -c=performance/jest.config.ts --no-cache",
+        "doc": "cd website && yarn start",
+        "doc:build": "cd website && yarn build",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
+        "prepublishOnly": "pinst --disable",
+        "postpublish": "pinst --enable",
+        "prepare": "husky"
+      },
+      "optionalDependencies": {
+        "esbuild": ">=0.28.0"
+      },
+      "peerDependencies": {
+        "@angular/compiler-cli": ">=20.0.0 <23.0.0",
+        "@angular/core": ">=20.0.0 <23.0.0",
+        "@angular/platform-browser": ">=20.0.0 <23.0.0",
+        "jest": "^30.0.0",
+        "jsdom": ">=26.0.0",
+        "typescript": ">=5.8"
+      },
+      "devDependencies": {
+        "@angular-devkit/build-angular": "^22.0.1",
+        "@angular/animations": "^22.0.1",
+        "@angular/cdk": "^22.0.1",
+        "@angular/common": "^22.0.1",
+        "@angular/compiler": "^22.0.1",
+        "@angular/compiler-cli": "^22.0.1",
+        "@angular/core": "^22.0.1",
+        "@angular/forms": "^22.0.1",
+        "@angular/material": "^22.0.1",
+        "@angular/platform-browser": "^22.0.1",
+        "@babel/core": "^7.29.7",
+        "@babel/preset-env": "^7.29.7",
+        "@commitlint/cli": "^21.0.2",
+        "@commitlint/config-angular": "^21.0.2",
+        "@eslint/js": "^10.0.1",
+        "@jest/environment-jsdom-abstract": "^30.4.1",
+        "@jest/transform": "^30.4.1",
+        "@jest/types": "^30.4.1",
+        "@types/fs-extra": "^11.0.4",
+        "@types/jest": "^30.0.0",
+        "@types/node": "^24.13.2",
+        "@types/semver": "^7.7.1",
+        "@typescript-eslint/eslint-plugin": "^8.48.0",
+        "@typescript-eslint/parser": "^8.48.0",
+        "angular-eslint": "^22.0.0",
+        "babel-jest": "^30.4.1",
+        "chalk": "^4.1.2",
+        "conventional-changelog": "^7.2.0",
+        "conventional-changelog-angular": "^8.3.1",
+        "cross-env": "^10.1.0",
+        "esbuild-register": "^3.6.0",
+        "eslint": "^10.5.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-jest": "^29.15.2",
+        "eslint-plugin-jsdoc": "^63.0.2",
+        "eslint-plugin-prettier": "^5.5.6",
+        "execa": "5.1.1",
+        "fs-extra": "^11.3.5",
+        "github-files-fetcher": "^1.6.0",
+        "glob": "^13.0.6",
+        "globals": "^17.6.0",
+        "husky": "^9.1.7",
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
+        "jsdom": "^26.1.0",
+        "pinst": "^3.0.0",
+        "prettier": "^3.8.4",
+        "rimraf": "^5.0.10",
+        "rxjs": "^7.8.2",
+        "semver": "^7.8.4",
+        "tslib": "^2.8.1",
+        "tsx": "^4.22.4",
+        "type-fest": "^5.7.0",
+        "typescript": "~6.0.3",
+        "typescript-eslint": "^8.60.1",
+        "zone.js": "~0.16.2"
+      },
+      "packageManager": "yarn@4.16.0",
+      "_id": "jest-preset-angular@17.0.0",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/jest-preset-angular",
+      "_dependencies": {
+        "@jest/environment-jsdom-abstract": "^30.4.1",
+        "bs-logger": "^0.2.6",
+        "esbuild-wasm": ">=0.28.0",
+        "jest-util": "^30.4.1",
+        "pretty-format": "^30.4.1",
+        "ts-jest": "^29.4.11",
+        "esbuild": ">=0.28.0"
+      }
+    },
+    "jest": {
+      "version": "30.5.1",
+      "resolved": "https://registry.npmjs.org/jest/-/jest-30.5.1.tgz",
+      "overridden": false,
+      "name": "jest",
+      "description": "Delightful JavaScript Testing.",
+      "main": "./build/index.js",
+      "types": "./build/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./build/index.d.ts",
+          "require": "./build/index.js",
+          "import": "./build/index.mjs",
+          "default": "./build/index.js"
+        },
+        "./package.json": "./package.json",
+        "./bin/jest": "./bin/jest.js"
+      },
+      "peerDependencies": {
+        "node-notifier": "^8.0.1 || ^9.0.0 || ^10.0.0"
+      },
+      "peerDependenciesMeta": {
+        "node-notifier": {
+          "optional": true
+        }
+      },
+      "bin": {
+        "jest": "bin/jest.js"
+      },
+      "engines": {
+        "node": "^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jestjs/jest.git",
+        "directory": "packages/jest"
+      },
+      "homepage": "https://jestjs.io/",
+      "license": "MIT",
+      "keywords": [
+        "ava",
+        "babel",
+        "coverage",
+        "easy",
+        "expect",
+        "facebook",
+        "immersive",
+        "instant",
+        "jasmine",
+        "jest",
+        "jsdom",
+        "mocha",
+        "mocking",
+        "painless",
+        "qunit",
+        "runner",
+        "sandboxed",
+        "snapshot",
+        "tap",
+        "tape",
+        "test",
+        "testing",
+        "typescript",
+        "watch"
+      ],
+      "publishConfig": {
+        "access": "public"
+      },
+      "gitHead": "9ab14feccd6c15fec1334dbcb03a53a079d153d3",
+      "_id": "jest@30.5.1",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/jest",
+      "_dependencies": {
+        "@jest/core": "30.5.1",
+        "@jest/types": "30.5.1",
+        "import-local": "^3.2.0",
+        "jest-cli": "30.5.1"
+      },
+      "devDependencies": {}
+    },
+    "prettier": {
+      "version": "3.9.6",
+      "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz",
+      "overridden": false,
+      "name": "prettier",
+      "description": "Prettier is an opinionated code formatter",
+      "bin": {
+        "prettier": "bin/prettier.cjs"
+      },
+      "repository": "prettier/prettier",
+      "funding": {
+        "url": "https://github.com/prettier/prettier?sponsor=1"
+      },
+      "homepage": "https://prettier.io",
+      "author": "James Long",
+      "license": "MIT",
+      "main": "./index.cjs",
+      "browser": "./standalone.js",
+      "unpkg": "./standalone.js",
+      "exports": {
+        ".": {
+          "types": "./index.d.ts",
+          "require": "./index.cjs",
+          "browser": {
+            "import": "./standalone.mjs",
+            "default": "./standalone.js"
+          },
+          "default": "./index.mjs"
+        },
+        "./*": "./*",
+        "./standalone": {
+          "types": "./standalone.d.ts",
+          "require": "./standalone.js",
+          "default": "./standalone.mjs"
+        },
+        "./doc": {
+          "types": "./doc.d.ts",
+          "require": "./doc.js",
+          "default": "./doc.mjs"
+        },
+        "./plugins/estree": {
+          "types": "./plugins/estree.d.ts",
+          "require": "./plugins/estree.js",
+          "default": "./plugins/estree.mjs"
+        },
+        "./plugins/babel": {
+          "types": "./plugins/babel.d.ts",
+          "require": "./plugins/babel.js",
+          "default": "./plugins/babel.mjs"
+        },
+        "./plugins/flow": {
+          "types": "./plugins/flow.d.ts",
+          "require": "./plugins/flow.js",
+          "default": "./plugins/flow.mjs"
+        },
+        "./plugins/typescript": {
+          "types": "./plugins/typescript.d.ts",
+          "require": "./plugins/typescript.js",
+          "default": "./plugins/typescript.mjs"
+        },
+        "./plugins/acorn": {
+          "types": "./plugins/acorn.d.ts",
+          "require": "./plugins/acorn.js",
+          "default": "./plugins/acorn.mjs"
+        },
+        "./plugins/meriyah": {
+          "types": "./plugins/meriyah.d.ts",
+          "require": "./plugins/meriyah.js",
+          "default": "./plugins/meriyah.mjs"
+        },
+        "./plugins/angular": {
+          "types": "./plugins/angular.d.ts",
+          "require": "./plugins/angular.js",
+          "default": "./plugins/angular.mjs"
+        },
+        "./plugins/postcss": {
+          "types": "./plugins/postcss.d.ts",
+          "require": "./plugins/postcss.js",
+          "default": "./plugins/postcss.mjs"
+        },
+        "./plugins/graphql": {
+          "types": "./plugins/graphql.d.ts",
+          "require": "./plugins/graphql.js",
+          "default": "./plugins/graphql.mjs"
+        },
+        "./plugins/markdown": {
+          "types": "./plugins/markdown.d.ts",
+          "require": "./plugins/markdown.js",
+          "default": "./plugins/markdown.mjs"
+        },
+        "./plugins/glimmer": {
+          "types": "./plugins/glimmer.d.ts",
+          "require": "./plugins/glimmer.js",
+          "default": "./plugins/glimmer.mjs"
+        },
+        "./plugins/html": {
+          "types": "./plugins/html.d.ts",
+          "require": "./plugins/html.js",
+          "default": "./plugins/html.mjs"
+        },
+        "./plugins/yaml": {
+          "types": "./plugins/yaml.d.ts",
+          "require": "./plugins/yaml.js",
+          "default": "./plugins/yaml.mjs"
+        },
+        "./esm/standalone.mjs": "./standalone.mjs",
+        "./parser-babel": "./plugins/babel.js",
+        "./parser-babel.js": "./plugins/babel.js",
+        "./esm/parser-babel.mjs": "./plugins/babel.mjs",
+        "./parser-flow": "./plugins/flow.js",
+        "./parser-flow.js": "./plugins/flow.js",
+        "./esm/parser-flow.mjs": "./plugins/flow.mjs",
+        "./parser-typescript": "./plugins/typescript.js",
+        "./parser-typescript.js": "./plugins/typescript.js",
+        "./esm/parser-typescript.mjs": "./plugins/typescript.mjs",
+        "./parser-espree": "./plugins/acorn.js",
+        "./parser-espree.js": "./plugins/acorn.js",
+        "./esm/parser-espree.mjs": "./plugins/acorn.mjs",
+        "./parser-meriyah": "./plugins/meriyah.js",
+        "./parser-meriyah.js": "./plugins/meriyah.js",
+        "./esm/parser-meriyah.mjs": "./plugins/meriyah.mjs",
+        "./parser-angular": "./plugins/angular.js",
+        "./parser-angular.js": "./plugins/angular.js",
+        "./esm/parser-angular.mjs": "./plugins/angular.mjs",
+        "./parser-postcss": "./plugins/postcss.js",
+        "./parser-postcss.js": "./plugins/postcss.js",
+        "./esm/parser-postcss.mjs": "./plugins/postcss.mjs",
+        "./parser-graphql": "./plugins/graphql.js",
+        "./parser-graphql.js": "./plugins/graphql.js",
+        "./esm/parser-graphql.mjs": "./plugins/graphql.mjs",
+        "./parser-markdown": "./plugins/markdown.js",
+        "./parser-markdown.js": "./plugins/markdown.js",
+        "./esm/parser-markdown.mjs": "./plugins/markdown.mjs",
+        "./parser-glimmer": "./plugins/glimmer.js",
+        "./parser-glimmer.js": "./plugins/glimmer.js",
+        "./esm/parser-glimmer.mjs": "./plugins/glimmer.mjs",
+        "./parser-html": "./plugins/html.js",
+        "./parser-html.js": "./plugins/html.js",
+        "./esm/parser-html.mjs": "./plugins/html.mjs",
+        "./parser-yaml": "./plugins/yaml.js",
+        "./parser-yaml.js": "./plugins/yaml.js",
+        "./esm/parser-yaml.mjs": "./plugins/yaml.mjs"
+      },
+      "engines": {
+        "node": ">=14"
+      },
+      "files": [
+        "LICENSE",
+        "README.md",
+        "THIRD-PARTY-NOTICES.md",
+        "bin/prettier.cjs",
+        "doc.d.ts",
+        "doc.js",
+        "doc.mjs",
+        "index.cjs",
+        "index.d.ts",
+        "index.d.ts",
+        "index.mjs",
+        "internal/experimental-cli-worker.mjs",
+        "internal/experimental-cli.mjs",
+        "internal/legacy-cli.mjs",
+        "package.json",
+        "plugins/acorn.d.ts",
+        "plugins/acorn.js",
+        "plugins/acorn.mjs",
+        "plugins/angular.d.ts",
+        "plugins/angular.js",
+        "plugins/angular.mjs",
+        "plugins/babel.d.ts",
+        "plugins/babel.js",
+        "plugins/babel.mjs",
+        "plugins/estree.d.ts",
+        "plugins/estree.js",
+        "plugins/estree.mjs",
+        "plugins/flow.d.ts",
+        "plugins/flow.js",
+        "plugins/flow.mjs",
+        "plugins/glimmer.d.ts",
+        "plugins/glimmer.js",
+        "plugins/glimmer.mjs",
+        "plugins/graphql.d.ts",
+        "plugins/graphql.js",
+        "plugins/graphql.mjs",
+        "plugins/html.d.ts",
+        "plugins/html.js",
+        "plugins/html.mjs",
+        "plugins/markdown.d.ts",
+        "plugins/markdown.js",
+        "plugins/markdown.mjs",
+        "plugins/meriyah.d.ts",
+        "plugins/meriyah.js",
+        "plugins/meriyah.mjs",
+        "plugins/postcss.d.ts",
+        "plugins/postcss.js",
+        "plugins/postcss.mjs",
+        "plugins/typescript.d.ts",
+        "plugins/typescript.js",
+        "plugins/typescript.mjs",
+        "plugins/yaml.d.ts",
+        "plugins/yaml.js",
+        "plugins/yaml.mjs",
+        "standalone.d.ts",
+        "standalone.js",
+        "standalone.mjs"
+      ],
+      "preferUnplugged": true,
+      "sideEffects": false,
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+      },
+      "_id": "prettier@3.9.6",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/prettier",
+      "_dependencies": {},
+      "devDependencies": {},
+      "peerDependencies": {}
+    },
+    "rxjs": {
+      "version": "7.8.2",
+      "resolved": "https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz",
+      "overridden": false,
+      "name": "rxjs",
+      "description": "Reactive Extensions for modern JavaScript",
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm5/index.js",
+      "es2015": "./dist/esm/index.js",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=4.2": {
+          "*": [
+            "dist/types/*"
+          ]
+        }
+      },
+      "sideEffects": false,
+      "exports": {
+        ".": {
+          "types": "./dist/types/index.d.ts",
+          "node": "./dist/cjs/index.js",
+          "require": "./dist/cjs/index.js",
+          "es2015": "./dist/esm/index.js",
+          "default": "./dist/esm5/index.js"
+        },
+        "./ajax": {
+          "types": "./dist/types/ajax/index.d.ts",
+          "node": "./dist/cjs/ajax/index.js",
+          "require": "./dist/cjs/ajax/index.js",
+          "es2015": "./dist/esm/ajax/index.js",
+          "default": "./dist/esm5/ajax/index.js"
+        },
+        "./fetch": {
+          "types": "./dist/types/fetch/index.d.ts",
+          "node": "./dist/cjs/fetch/index.js",
+          "require": "./dist/cjs/fetch/index.js",
+          "es2015": "./dist/esm/fetch/index.js",
+          "default": "./dist/esm5/fetch/index.js"
+        },
+        "./operators": {
+          "types": "./dist/types/operators/index.d.ts",
+          "node": "./dist/cjs/operators/index.js",
+          "require": "./dist/cjs/operators/index.js",
+          "es2015": "./dist/esm/operators/index.js",
+          "default": "./dist/esm5/operators/index.js"
+        },
+        "./testing": {
+          "types": "./dist/types/testing/index.d.ts",
+          "node": "./dist/cjs/testing/index.js",
+          "require": "./dist/cjs/testing/index.js",
+          "es2015": "./dist/esm/testing/index.js",
+          "default": "./dist/esm5/testing/index.js"
+        },
+        "./webSocket": {
+          "types": "./dist/types/webSocket/index.d.ts",
+          "node": "./dist/cjs/webSocket/index.js",
+          "require": "./dist/cjs/webSocket/index.js",
+          "es2015": "./dist/esm/webSocket/index.js",
+          "default": "./dist/esm5/webSocket/index.js"
+        },
+        "./internal/*": {
+          "types": "./dist/types/internal/*.d.ts",
+          "node": "./dist/cjs/internal/*.js",
+          "require": "./dist/cjs/internal/*.js",
+          "es2015": "./dist/esm/internal/*.js",
+          "default": "./dist/esm5/internal/*.js"
+        },
+        "./package.json": "./package.json"
+      },
+      "config": {
+        "commitizen": {
+          "path": "cz-conventional-changelog"
+        }
+      },
+      "lint-staged": {
+        "*.js": "eslint --cache --fix",
+        "(src|spec)/**/*.ts": [
+          "tslint --fix",
+          "prettier --write"
+        ],
+        "*.{js,css,md}": "prettier --write"
+      },
+      "scripts": {
+        "changelog": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s",
+        "build:spec:browser": "echo \"Browser test is not working currently\" && exit -1 && webpack --config spec/support/webpack.mocha.config.js",
+        "lint_spec": "tslint -c spec/tslint.json -p spec/tsconfig.json \"spec/**/*.ts\"",
+        "lint_src": "tslint -c tslint.json -p src/tsconfig.base.json \"src/**/*.ts\"",
+        "lint": "npm-run-all --parallel lint_*",
+        "dtslint": "tsc -b ./src/tsconfig.types.json && tslint -c spec-dtslint/tslint.json -p spec-dtslint/tsconfig.json \"spec-dtslint/**/*.ts\"",
+        "prepublishOnly": "npm run build:package && npm run lint && npm run test && npm run test:circular && npm run dtslint && npm run test:side-effects",
+        "publish_docs": "./publish_docs.sh",
+        "test": "cross-env TS_NODE_PROJECT=tsconfig.mocha.json mocha --config spec/support/.mocharc.js \"spec/**/*-spec.ts\"",
+        "test:esm": "node spec/module-test-spec.mjs",
+        "test:browser": "echo \"Browser test is not working currently\" && exit -1 && npm-run-all build:spec:browser && opn spec/support/mocha-browser-runner.html",
+        "test:circular": "dependency-cruiser --validate .dependency-cruiser.json -x \"^node_modules\" dist/esm5",
+        "test:systemjs": "node integration/systemjs/systemjs-compatibility-spec.js",
+        "test:side-effects": "check-side-effects --test integration/side-effects/side-effects.json",
+        "test:side-effects:update": "npm run test:side-effects -- --update",
+        "test:import": "ts-node ./integration/import/runner.ts",
+        "compile": "tsc -b ./src/tsconfig.cjs.json ./src/tsconfig.cjs.spec.json ./src/tsconfig.esm.json ./src/tsconfig.esm5.json ./src/tsconfig.esm5.rollup.json ./src/tsconfig.types.json ./src/tsconfig.types.spec.json ./spec/tsconfig.json",
+        "build:clean": "shx rm -rf ./dist",
+        "build:global": "node ./tools/make-umd-bundle.js && node ./tools/make-closure-core.js",
+        "build:package": "npm-run-all build:clean compile build:global && node ./tools/prepare-package.js && node ./tools/generate-alias.js",
+        "watch": "nodemon -w \"src/\" -w \"spec/\" -e ts -x npm test",
+        "watch:dtslint": "nodemon -w \"src/\" -w \"spec-dtslint/\" -e ts -x npm run dtslint"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/reactivex/rxjs.git"
+      },
+      "keywords": [
+        "Rx",
+        "RxJS",
+        "ReactiveX",
+        "ReactiveExtensions",
+        "Streams",
+        "Observables",
+        "Observable",
+        "Stream",
+        "ES6",
+        "ES2015"
+      ],
+      "author": "Ben Lesh <ben@benlesh.com>",
+      "contributors": [
+        {
+          "name": "Ben Lesh",
+          "email": "ben@benlesh.com"
+        },
+        {
+          "name": "Paul Taylor",
+          "email": "paul.e.taylor@me.com"
+        },
+        {
+          "name": "Jeff Cross",
+          "email": "crossj@google.com"
+        },
+        {
+          "name": "Matthew Podwysocki",
+          "email": "matthewp@microsoft.com"
+        },
+        {
+          "name": "OJ Kwon",
+          "email": "kwon.ohjoong@gmail.com"
+        },
+        {
+          "name": "Andre Staltz",
+          "email": "andre@staltz.com"
+        }
+      ],
+      "license": "Apache-2.0",
+      "bugs": {
+        "url": "https://github.com/ReactiveX/RxJS/issues"
+      },
+      "homepage": "https://rxjs.dev",
+      "devDependencies": {
+        "@angular-devkit/build-optimizer": "0.4.6",
+        "@angular-devkit/schematics": "^11.0.7",
+        "@swc/core": "^1.2.128",
+        "@swc/helpers": "^0.3.2",
+        "@types/chai": "^4.2.11",
+        "@types/lodash": "4.14.102",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^14.14.6",
+        "@types/shelljs": "^0.8.8",
+        "@types/sinon": "4.1.3",
+        "@types/sinon-chai": "2.7.29",
+        "@types/source-map": "^0.5.2",
+        "@typescript-eslint/eslint-plugin": "^4.29.1",
+        "@typescript-eslint/parser": "^4.29.1",
+        "babel-polyfill": "6.26.0",
+        "chai": "^4.2.0",
+        "check-side-effects": "0.0.23",
+        "color": "3.0.0",
+        "colors": "1.1.2",
+        "cross-env": "5.1.3",
+        "cz-conventional-changelog": "1.2.0",
+        "dependency-cruiser": "^9.12.0",
+        "escape-string-regexp": "1.0.5",
+        "eslint": "^7.8.1",
+        "eslint-plugin-jasmine": "^2.10.1",
+        "form-data": "^3.0.0",
+        "fs-extra": "^8.1.0",
+        "glob": "7.1.2",
+        "google-closure-compiler-js": "20170218.0.0",
+        "husky": "^4.2.5",
+        "klaw-sync": "3.0.2",
+        "lint-staged": "^10.2.11",
+        "lodash": "^4.17.15",
+        "minimist": "^1.2.5",
+        "mocha": "^8.1.3",
+        "nodemon": "^1.9.2",
+        "npm-run-all": "4.1.2",
+        "opn-cli": "3.1.0",
+        "platform": "1.3.5",
+        "prettier": "^2.5.1",
+        "promise": "8.0.1",
+        "rollup": "0.66.6",
+        "rollup-plugin-alias": "1.4.0",
+        "rollup-plugin-inject": "2.0.0",
+        "rollup-plugin-node-resolve": "2.0.0",
+        "shelljs": "^0.8.4",
+        "shx": "^0.3.2",
+        "sinon": "4.3.0",
+        "sinon-chai": "2.14.0",
+        "source-map-support": "0.5.3",
+        "systemjs": "^0.21.0",
+        "ts-node": "^9.1.1",
+        "tslint": "^5.20.1",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-etc": "1.13.10",
+        "tslint-no-toplevel-property-access": "0.0.2",
+        "tslint-no-unused-expression-chai": "0.0.3",
+        "typescript": "~4.2.0",
+        "validate-commit-msg": "2.14.0",
+        "web-streams-polyfill": "^3.0.2",
+        "webpack": "^4.31.0"
+      },
+      "files": [
+        "dist/bundles",
+        "dist/cjs/**/!(*.tsbuildinfo)",
+        "dist/esm/**/!(*.tsbuildinfo)",
+        "dist/esm5/**/!(*.tsbuildinfo)",
+        "dist/types/**/!(*.tsbuildinfo)",
+        "ajax",
+        "fetch",
+        "operators",
+        "testing",
+        "webSocket",
+        "src",
+        "CHANGELOG.md",
+        "CODE_OF_CONDUCT.md",
+        "LICENSE.txt",
+        "package.json",
+        "README.md",
+        "tsconfig.json"
+      ],
+      "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged",
+          "commit-msg": "validate-commit-msg"
+        }
+      },
+      "_id": "rxjs@7.8.2",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/rxjs",
+      "_dependencies": {
+        "tslib": "^2.1.0"
+      },
+      "peerDependencies": {}
+    },
+    "tslib": {
+      "version": "2.8.1",
+      "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+      "overridden": false,
+      "name": "tslib",
+      "author": "Microsoft Corp.",
+      "homepage": "https://www.typescriptlang.org/",
+      "license": "0BSD",
+      "description": "Runtime library for TypeScript helper functions",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript",
+        "tslib",
+        "runtime"
+      ],
+      "bugs": {
+        "url": "https://github.com/Microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Microsoft/tslib.git"
+      },
+      "main": "tslib.js",
+      "module": "tslib.es6.js",
+      "jsnext:main": "tslib.es6.js",
+      "typings": "tslib.d.ts",
+      "sideEffects": false,
+      "exports": {
+        ".": {
+          "module": {
+            "types": "./modules/index.d.ts",
+            "default": "./tslib.es6.mjs"
+          },
+          "import": {
+            "node": "./modules/index.js",
+            "default": {
+              "types": "./modules/index.d.ts",
+              "default": "./tslib.es6.mjs"
+            }
+          },
+          "default": "./tslib.js"
+        },
+        "./*": "./*",
+        "./": "./"
+      },
+      "_id": "tslib@2.8.1",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/tslib",
+      "_dependencies": {},
+      "devDependencies": {},
+      "peerDependencies": {}
+    },
+    "typescript-eslint": {
+      "version": "8.70.0",
+      "resolved": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.70.0.tgz",
+      "overridden": false,
+      "name": "typescript-eslint",
+      "description": "Tooling which enables you to use TypeScript with ESLint",
+      "files": [
+        "dist",
+        "!**/*.js.map",
+        "!**/*.tsbuildinfo"
+      ],
+      "type": "commonjs",
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "./package.json": "./package.json"
+      },
+      "types": "./dist/index.d.ts",
+      "engines": {
+        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+        "directory": "packages/typescript-eslint"
+      },
+      "bugs": {
+        "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+      },
+      "homepage": "https://typescript-eslint.io/packages/typescript-eslint",
+      "license": "MIT",
+      "keywords": [
+        "ast",
+        "ecmascript",
+        "javascript",
+        "typescript",
+        "parser",
+        "syntax",
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin"
+      ],
+      "peerDependencies": {
+        "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+        "typescript": ">=4.8.4 <6.1.0"
+      },
+      "devDependencies": {
+        "@typescript/native": "npm:typescript@^7.0.2",
+        "@vitest/coverage-v8": "^4.0.18",
+        "eslint": "^10.0.0",
+        "minimatch": "*",
+        "rimraf": "^5.0.10",
+        "typescript": ">=4.8.4 <6.1.0",
+        "vitest": "^4.0.18"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/typescript-eslint"
+      },
+      "nx": {
+        "name": "typescript-eslint",
+        "includedScripts": [
+          "clean"
+        ],
+        "targets": {
+          "lint": {
+            "command": "eslint"
+          },
+          "typecheck": {
+            "outputs": [
+              "{workspaceRoot}/dist",
+              "{projectRoot}/dist"
+            ]
+          },
+          "typecheck:tsgo": {
+            "outputs": [
+              "{workspaceRoot}/dist",
+              "{projectRoot}/dist"
+            ]
+          },
+          "test": {
+            "dependsOn": [
+              "^build",
+              "typecheck"
+            ]
+          },
+          "attw-check": {
+            "cache": false,
+            "command": "pnpm pack --out attw-check.tgz && attw attw-check.tgz --profile node16 --ignore-rules cjs-only-exports-default",
+            "options": {
+              "cwd": "{projectRoot}"
+            }
+          }
+        }
+      },
+      "scripts": {
+        "build": "pnpm exec nx build",
+        "clean": "rimraf dist/ coverage/",
+        "format": "pnpm -w run format",
+        "lint": "pnpm -w exec nx lint",
+        "test": "pnpm -w exec nx test",
+        "typecheck": "pnpm -w exec nx typecheck",
+        "typecheck:tsgo": "pnpm -w exec nx typecheck:tsgo",
+        "attw-check": "pnpm -w exec nx attw-check"
+      },
+      "_id": "typescript-eslint@8.70.0",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/typescript-eslint",
+      "_dependencies": {
+        "@typescript-eslint/eslint-plugin": "8.70.0",
+        "@typescript-eslint/parser": "8.70.0",
+        "@typescript-eslint/typescript-estree": "8.70.0",
+        "@typescript-eslint/utils": "8.70.0"
+      }
+    },
+    "typescript": {
+      "version": "6.0.3",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz",
+      "overridden": false,
+      "name": "typescript",
+      "author": "Microsoft Corp.",
+      "homepage": "https://www.typescriptlang.org/",
+      "license": "Apache-2.0",
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "keywords": [
+        "TypeScript",
+        "Microsoft",
+        "compiler",
+        "language",
+        "javascript"
+      ],
+      "bugs": {
+        "url": "https://github.com/microsoft/TypeScript/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/TypeScript.git"
+      },
+      "main": "./lib/typescript.js",
+      "typings": "./lib/typescript.d.ts",
+      "bin": {
+        "tsc": "bin/tsc",
+        "tsserver": "bin/tsserver"
+      },
+      "engines": {
+        "node": ">=14.17"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "!lib/enu",
+        "LICENSE.txt",
+        "README.md",
+        "SECURITY.md",
+        "ThirdPartyNoticeText.txt",
+        "!**/.gitattributes"
+      ],
+      "devDependencies": {
+        "@dprint/formatter": "^0.4.1",
+        "@dprint/typescript": "0.93.4",
+        "@esfx/canceltoken": "^1.0.0",
+        "@eslint/js": "^10.0.1",
+        "@octokit/rest": "^22.0.1",
+        "@types/chai": "^4.3.20",
+        "@types/minimist": "^1.2.5",
+        "@types/mocha": "^10.0.10",
+        "@types/ms": "^2.1.0",
+        "@types/node": "latest",
+        "@types/source-map-support": "^0.5.10",
+        "@types/which": "^3.0.4",
+        "@typescript-eslint/rule-tester": "^8.56.1",
+        "@typescript-eslint/type-utils": "^8.56.1",
+        "@typescript-eslint/utils": "^8.56.1",
+        "azure-devops-node-api": "^15.1.3",
+        "c8": "^10.1.3",
+        "chai": "^4.5.0",
+        "chokidar": "^4.0.3",
+        "diff": "^8.0.3",
+        "dprint": "^0.49.1",
+        "esbuild": "^0.27.3",
+        "eslint": "^10.0.2",
+        "eslint-plugin-regexp": "^3.0.0",
+        "fast-xml-parser": "^5.4.1",
+        "glob": "^10.5.0",
+        "globals": "^17.4.0",
+        "hereby": "^1.12.0",
+        "jsonc-parser": "^3.3.1",
+        "knip": "^5.85.0",
+        "minimist": "^1.2.8",
+        "mocha": "^10.8.2",
+        "mocha-fivemat-progress-reporter": "^0.1.0",
+        "monocart-coverage-reports": "^2.12.9",
+        "ms": "^2.1.3",
+        "picocolors": "^1.1.1",
+        "playwright": "^1.58.2",
+        "source-map-support": "^0.5.21",
+        "tslib": "^2.8.1",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.56.1",
+        "which": "^3.0.1"
+      },
+      "overrides": {
+        "typescript@*": "$typescript"
+      },
+      "scripts": {
+        "test": "hereby runtests-parallel --light=false",
+        "test:eslint-rules": "hereby run-eslint-rules-tests",
+        "build": "npm run build:compiler && npm run build:tests",
+        "build:compiler": "hereby local",
+        "build:tests": "hereby tests",
+        "build:tests:notypecheck": "hereby tests --no-typecheck",
+        "clean": "hereby clean",
+        "gulp": "hereby",
+        "lint": "hereby lint",
+        "knip": "hereby knip",
+        "format": "dprint fmt",
+        "setup-hooks": "node scripts/link-hooks.mjs"
+      },
+      "browser": {
+        "fs": false,
+        "os": false,
+        "path": false,
+        "crypto": false,
+        "buffer": false,
+        "source-map-support": false,
+        "inspector": false,
+        "perf_hooks": false
+      },
+      "packageManager": "npm@8.19.4",
+      "volta": {
+        "node": "22.22.0",
+        "npm": "8.19.4"
+      },
+      "gitHead": "050880ce59e30b356b686bd3144efe24f875ebc8",
+      "_id": "typescript@6.0.3",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/typescript",
+      "_dependencies": {},
+      "peerDependencies": {}
+    },
+    "zone.js": {
+      "version": "0.16.3",
+      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.16.3.tgz",
+      "overridden": false,
+      "name": "zone.js",
+      "description": "Zones for JavaScript",
+      "main": "./bundles/zone.umd.js",
+      "module": "./fesm2015/zone.js",
+      "es2015": "./fesm2015/zone.js",
+      "fesm2015": "./fesm2015/zone.js",
+      "typings": "./zone.d.ts",
+      "devDependencies": {
+        "@csstools/css-calc": "3.3.0",
+        "@csstools/css-color-parser": "4.2.1",
+        "@externs/nodejs": "1.5.0",
+        "@types/jasmine": "6.0.0",
+        "@types/node": "^24.3.0",
+        "@types/systemjs": "6.15.4",
+        "bluebird": "3.7.2",
+        "domino": "https://github.com/angular/domino.git#7df65450b8331278010e44eed0ef32225b07d203",
+        "esbuild-plugin-umd-wrapper": "3.0.0",
+        "jest-environment-jsdom": "30.4.1",
+        "jest-environment-node": "30.4.1",
+        "jest": "30.4.2",
+        "mocha": "11.8.0",
+        "mock-require": "3.0.3",
+        "jasmine": "6.3.0",
+        "source-map-support": "0.5.21",
+        "jasmine-core": "6.3.0",
+        "jasmine-reporters": "2.5.2",
+        "rxjs": "7.8.2",
+        "systemjs": "6.15.1",
+        "tslib": "^2.3.0",
+        "vitest": "^4.0.0"
+      },
+      "scripts": {
+        "electrontest": "cd test/extra && node electron.js",
+        "jest:test": "jest --config ./test/jest/jest.config.js",
+        "jest:nodetest": "jest --config ./test/jest/jest.node.config.js",
+        "vitest:test": "vitest ./test/vitest/*.spec.js --exclude ./test/vitest/*-globals.spec.js",
+        "vitest-globals:test": "vitest ./test/vitest/*-globals.spec.js --globals",
+        "promisefinallytest": "mocha ./test/promise/promise.finally.spec.mjs",
+        "release": "node tools/release.mts"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/angular/angular.git",
+        "directory": "packages/zone.js"
+      },
+      "publishConfig": {
+        "registry": "https://wombat-dressing-room.appspot.com"
+      },
+      "author": "Brian Ford",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/angular/angular/issues"
+      },
+      "exports": {
+        "./package.json": {
+          "default": "./package.json"
+        },
+        ".": {
+          "types": "./zone.d.ts",
+          "require": "./bundles/zone.umd.js",
+          "default": "./fesm2015/zone.js"
+        },
+        "./testing": {
+          "require": "./bundles/zone-testing.umd.js",
+          "default": "./fesm2015/zone-testing.js"
+        },
+        "./node": {
+          "require": "./bundles/zone-node.umd.js",
+          "default": "./fesm2015/zone-node.js"
+        },
+        "./mix": {
+          "require": "./bundles/zone-mix.umd.js",
+          "default": "./fesm2015/zone-mix.js"
+        },
+        "./plugins/*.min": {
+          "require": "./bundles/*.umd.min.js",
+          "default": "./fesm2015/*.min.js"
+        },
+        "./plugins/*": {
+          "require": "./bundles/*.umd.js",
+          "default": "./fesm2015/*.js"
+        }
+      },
+      "_id": "zone.js@0.16.3",
+      "extraneous": false,
+      "path": "/home/alex/workspace/Angular.micro-front-main-shell/node_modules/zone.js",
+      "_dependencies": {},
+      "peerDependencies": {}
+    }
+  }
+}
